@@ -1,0 +1,14 @@
+ <mvc:View controllerName="com.capgemini.DMUsecase.controller.MainView"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <App id="idAppControl" >
+    <pages>
+      <Page title="{i18n>title}">
+        <content>
+          <Button  text="test API CALL" press="testAPI"></Button>
+        </content>
+      </Page>
+    </pages>
+  </App>
+</mvc:View>
