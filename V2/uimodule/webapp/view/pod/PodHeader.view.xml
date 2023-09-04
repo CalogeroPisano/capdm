@@ -1,0 +1,74 @@
+<mvc:View controllerName="com.capgemini.DMUsecase.controller.pod.PodHeader" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc">
+    <HBox class="podHeader" alignItems="Center" width="100%" height="100%">
+        <HBox class="HB-button" alignItems="Center">
+            <Button id="navBackButton" class="backIcon" icon="sap-icon://nav-back" type="Transparent" press="onNavBack" visible="{session>/navBackVisible}" />
+        </HBox>
+        <HBox class="titleWC" alignItems="Center" height="75%">
+            <HBox class="mr-5">
+                <VBox class="mr-4">
+                    <Label class="textHeaderLabel" text="{i18n>station}:"></Label>
+                    <Label class="textHeaderLabel" text="{i18n>odp}:"></Label>
+                </VBox>
+                <VBox class="" height="100%">
+                    <Label class="textHeader" text="{podHeader>/WORKCENTER} - {podHeader>/DESCRIPTION}" />
+                    <Label class="textHeader" text="{podHeader>/ODP}" />
+                </VBox>
+            </HBox>
+
+        </HBox>
+        <HBox class="logoPodSection" justifyContent="Center">
+            <Image height="54px" src="./images/DucatiLogo.png" />
+        </HBox>
+        <HBox width="45%" height="100%" justifyContent="End">
+            <HBox class="userNameAndLanguageSectionPod">
+                <HBox class="mr-4" alignItems="Center">
+                    <Image width="2.5rem" src="{= ${session>/Language} === 'IT' ? './images/flags/Italy.png': './images/flags/england.png'}"></Image>
+                    <Button class="backIcon" type="Transparent"  icon="sap-icon://navigation-down-arrow" press="handlePopoverLanguagePress"></Button>
+                    <!-- <Image width="2.5rem" src="./images/flags/italy.png"></Image>
+                    <Button type="Transparent" icon="sap-icon://navigation-down-arrow"></Button> -->
+                </HBox>
+                <ToolbarSpacer>
+                    <layoutData>
+                        <OverflowToolbarLayoutData priority="NeverOverflow" maxWidth="20px" />
+                    </layoutData>
+                </ToolbarSpacer>
+                <VBox justifyContent="Center" alignItems="Center">
+                    <HBox alignItems="Center">
+                        <Text class="textOperator" text="{session>/IllumLoginName}" />
+
+                    </HBox>
+                    <HBox alignItems="Center">
+                        <Text class="textOperator" text="{session>/firstname}" />
+                    </HBox>
+                </VBox>
+                <VBox justifyContent="Center" alignItems="Center">
+                    <Button class="backIcon" type="Transparent" id="_IDGenButton2" icon="sap-icon://navigation-down-arrow" press="handlePopoverLogoutPress"></Button>
+                </VBox>
+            </HBox>
+            <HBox class="timeAndConnectionSection">
+                <VBox height="100%" width="80%" justifyContent="Center" alignItems="Center">
+                    <Text class="timeText" text="{podHeader>/CURRENTDATE}"></Text>
+                    <Text class="timeText" text="{podHeader>/CURRENTTIME}"></Text>
+                </VBox>
+                <VBox height="100%" width="20%" justifyContent="Start" class="icon-vbox">
+                    <core:Icon visible="{= ${podHeader>/ISCONNECTED} === 1 ? true:false }" src="sap-icon://connected" class="sizeIcon" color="#07ab07">
+                        <core:layoutData>
+                            <FlexItemData growFactor="1" />
+                        </core:layoutData>
+                    </core:Icon>
+                    <core:Icon visible="{= ${podHeader>/ISCONNECTED} === 1 ? false:true }" src="sap-icon://disconnected" class="sizeIcon" color="#ab0f07">
+                        <core:layoutData>
+                            <FlexItemData growFactor="1" />
+                        </core:layoutData>
+                    </core:Icon>
+                </VBox>
+            </HBox>
+        </HBox>
+
+
+    </HBox>
+
+</mvc:View>

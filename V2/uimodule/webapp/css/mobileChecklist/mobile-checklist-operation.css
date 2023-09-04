@@ -1,0 +1,10 @@
+.mobile-checklist-operation .custom-panel > div:first-child  {
+    background-color: #0f0f0fda ;
+    color: white
+}
+.mobile-checklist-operation .custom-panel > div:first-child h2  {
+   color: white;
+}
+.mobile-checklist-operation .custom-panel > div:first-child span  {
+    color: #CC0000;
+ }

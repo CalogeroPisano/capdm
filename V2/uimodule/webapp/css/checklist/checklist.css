@@ -1,0 +1,119 @@
+@import "./wizard-ducati.css";
+
+.checklistPage .KPI-header {
+    height: 30%;
+    background-color: #EBEBEB !important;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 0.5%;
+}
+
+@media only screen and (max-height: 800px) {
+    .checklistPage .KPI-header-small {
+        height: 40% !important;
+    }
+
+}
+@media only screen and (max-height: 800px) {
+    .checklistPage .table-vbox-checklist {
+        zoom: 90%;
+    }
+}
+
+.checklistPage .form-div>div {
+    width: 100%;
+}
+
+.checklistPage .checklist-created-table {
+    padding-top: 1rem;
+}
+
+.checklistPage .genericTilesButtons {
+    padding-top: 1rem;
+    align-items: center;
+}
+
+.overflow-x-auto {
+    overflow-x: auto;
+}
+
+.overflow-y-auto {
+    overflow-y: auto;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+.font-large-title {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    font-size: 18 !important;
+    font-weight: bold !important;
+}
+.checklistPage .KPI-TOP3-NC-Table {
+    width: 58.2%;
+    height: 82.5%;
+}
+
+.checklistPage .KPI-TOP3-NC-Table>table {
+    width: 58.2%;
+    height: 82.5%;
+}
+
+.checklistPage .checklist-top3-all {
+    padding-top: 1.5rem;
+}
+
+.checklistPage .header_first_chart {
+    justify-content: center;
+    margin-bottom: 0.7rem;
+    margin-left: 7%;
+}
+
+.checklistPage .header_first_chart span {
+    text-align: center !important;
+    font-size: 18px !important;
+    font-family: 'ubuntu' !important;
+}
+
+.checklistPage .data_KPI_TOP3 {
+    justify-content: space-evenly !important;
+}
+
+.checklistPage .checklist-main {
+    height: 65%;
+}
+
+.checklistPage .KPI-TOP3-NC-Chart {
+    justify-content: center;
+}
+
+.checklistTypologyCreation section {
+    height: 100% !important;
+    padding-top: 2rem;
+    
+}
+.labelCentered {
+    width: 100%;
+    text-align: center !important;
+}
+
+.checklistPage .label-size-3 bdi {
+    font-size: 18px !important;
+    color: black !important;
+}
+.review-step {
+    margin-bottom: 4rem !important;
+}
+.review-step-vbox {
+    padding: 2rem
+}
+
+.sapUiFormCLCellsL5 {
+    width: 90% !important;
+}
+.sapUiFormCLCellsL5:has(.text-area-button) {
+    width: 10% !important;
+}
+/* 1080:100 = 292:x */

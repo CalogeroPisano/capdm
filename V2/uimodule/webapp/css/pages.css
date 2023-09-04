@@ -1,0 +1,9 @@
+@import "./header/header.css";
+@import "./checklist/checklist.css";
+@import "./avvitatori/avvitatori_backoffice.css";
+@import "./mobileChecklist/mobile-checklist.css";
+@import "./mobileChecklist/mobile-checklist-operation.css";
+@import "./avvitatori/synoptic.css";
+@import "./avvitatori/pod.css";
+@import "./tailwindOutput.css";
+@import "./checklist/report-checklist.css";

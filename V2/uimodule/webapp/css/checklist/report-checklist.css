@@ -1,0 +1,12 @@
+.reportChecklist .hbox-form>div {
+    width: 100% !important;
+    /* padding-right: 2rem;
+    padding-left: 2rem; */
+    margin-bottom: 2rem;
+}
+.reportChecklist .hbox-form>div {
+    width: 100% !important;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+}

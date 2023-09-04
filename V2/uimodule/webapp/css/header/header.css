@@ -1,0 +1,49 @@
+/* header page ducati */
+
+.sapTntToolPageHeader {
+    height: 80px !important;
+}
+
+.header-ducati {
+    height: 80px !important;
+    background-color: #0F0F0F !important;
+    color: #FAFAFA !important;
+    padding-left: 3% !important;
+    ;
+    padding-right: 3% !important;
+    ;
+}
+
+.headerTitle-ducati {
+    text-align: center;
+    font-size: 18px;
+    font-family: 'ubuntu';
+}
+
+.titleAndNavigationSection {
+    width: "10%";
+}
+
+.logoSection {
+    width: "80%";
+}
+
+.userNameAndLanguageSection {
+    width: "10%";
+}
+
+@media only screen and (max-width:850px) {
+    .titleAndNavigationSection {
+        width: "25%" !important;
+    }
+    .userNameAndLanguageSection {
+        width: "25%";
+    }
+    .logoSection {
+        width: "50%";
+    }
+}
+
+.hamburger-button {
+    
+}

@@ -1,0 +1,167 @@
+.avv-synopitc .header-card-title-screen span {
+    font-weight: bold !important;
+
+}
+
+.avv-synopitc .header-card-title-screen .sapFCardHeaderTextFirstLine .sapMTextLineClamp {
+    font-size: 1.8rem !important;
+
+}
+
+.avv-synopitc .header-card-title-screen .sapFCardHeaderTextSecondLine .sapMTextLineClamp {
+    font-size: 2rem !important;
+
+}
+
+.avv-synopitc .header-card-title-screen-multiple .sapFCardHeaderTextFirstLine .sapMTextLineClamp {
+    font-size: 1.4rem !important;
+
+}
+
+.avv-synopitc .header-card-title-screen-multiple .sapFCardHeaderTextSecondLine .sapMTextLineClamp {
+    font-size: 1.6rem !important;
+
+}
+
+
+.mr-2 {
+    margin-right: 0.5rem;
+}
+
+.avv-synopitc .contentStationCard {
+    /* justify-content: space-evenly; */
+    margin-left: 4.25rem !important;
+}
+
+.avv-synopitc .title span {
+    font-size: 1.5rem !important;
+}
+
+.avv-synopitc .title-phase span {
+    font-size: 2rem !important;
+}
+
+.avv-synopitc .title-date span {
+    font-size: 1.25rem !important;
+}
+
+.avv-synopitc .title-multiple span {
+    font-size: 1.5rem !important;
+}
+
+.avv-synopitc .title-phase-multiple span {
+    font-size: 2rem !important;
+}
+
+.avv-synopitc .title-date-multiple span {
+    font-size: 1.25rem !important;
+}
+
+
+.avv-synopitc section {
+    zoom: 64% !important;
+    right: 4rem !important;
+    left: 4rem !important;
+}
+
+.inline-flex {
+    display: inline-flex !important;
+}
+
+.inline-flex div {
+    display: inline-flex !important;
+}
+
+.background-tile {
+    background-color: transparent;
+    border-bottom: none;
+
+}
+
+.centered {
+    margin: auto;
+}
+
+.tile-border {
+    border-radius: 2rem !important;
+
+    background-color: white !important;
+}
+
+.border-color {
+    border: 3px solid rgb(110, 109, 109) !important;
+    background-color: white !important;
+}
+
+.avv-synopitc span {
+    color: black;
+    font-weight: bold;
+}
+
+.customcard-multiple {
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+}
+
+.m-hbox {
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+    margin-right: 0.25rem;
+    margin-left: 0.25rem;
+    margin-bottom: 1.25rem !important;
+}
+
+.avv-synopitc .text-highligthed span {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.avv-synopitc .text-bold span {
+    font-weight: bold;
+}
+
+.avv-synopitc .sapFCardSubtitle .sapMTextMaxLine {
+    font-size: 16px !important;
+    color: #3f3f3f;
+}
+
+.avv-synopitc .sapFCardTitle .sapMTextMaxLine {
+    font-size: 18px !important;
+}
+
+.avv-synopitc .legendStates ul {
+    display: inline-flex !important;
+    width: 100%;
+}
+
+.avv-synopitc .legendStates li {
+    display: inherit !important;
+    background: none;
+    border-bottom: none !important;
+}
+
+.avv-synopitc .list_item {
+    margin-top: 1rem;
+    margin-right: 1.5rem;
+    background: none;
+}
+
+.avv-synopitc .textItem {
+    margin-left: 1rem;
+}
+
+.avv-synopitc .itemLegend>div:first-child {
+    padding-top: 0.2rem;
+}
+
+.avv-synopitc .steteConnected {
+    border: 3px solid #07ab07;
+}
+
+.avv-synopitc .steteDisconnected {
+    border: 3px solid #ab0f07;
+}
+
+.avv-synopitc .white-text span {
+    color: white !important;
+}

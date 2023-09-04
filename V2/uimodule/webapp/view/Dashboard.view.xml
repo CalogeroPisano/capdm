@@ -1,0 +1,23 @@
+<mvc:View xmlns:f="sap.f" controllerName="com.capgemini.DMUsecase.controller.Dashboard" displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Panel height="100%" width="100%" class="colorbackDefault">
+    <HBox>
+      <Text text="Version of the application 0.1_ALFA build on 04/09/2023"/>
+    </HBox>
+    <GenericTile visible="true" header="aa" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" press="goToAdminChecklist">
+      <TileContent>
+        <ImageContent src="sap-icon://clinical-tast-tracker" />
+      </TileContent>
+    </GenericTile>
+    <GenericTile visible="true" header="aa" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" press="goToLines">
+      <TileContent>
+        <ImageContent src="sap-icon://history" />
+      </TileContent>
+    </GenericTile>
+    
+  </Panel>
+
+
+
+</mvc:View>

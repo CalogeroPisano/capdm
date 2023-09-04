@@ -53,12 +53,26 @@ sap.ui.define(
              * @param {Object.<string, string>} pmParameters? Parameters for navigation
              * @param {boolean} pbReplace? Defines if the hash should be replaced (no browser history entry) or set (browser history entry)
              */
-            navTo: function (psTarget, pmParameters, pbReplace) {
-                this.getRouter().navTo(psTarget, pmParameters, pbReplace);
+            navTo: function (target, parameters = {}, replace = false) {
+                this.getPollings().deleteAllPollings();
+                this.getRouter().navTo(target, parameters, replace);
             },
 
             getRouter: function () {
                 return UIComponent.getRouterFor(this);
+            },
+
+            /**
+             * Convenience method for setting route matched function.
+             * @public
+             * @param {function} function the function to be called needs to be binded 
+             * @param {Controller} controller this reference of the controller 
+             */
+            attachRoutePatternMatched: function (callbackName, controller) {
+                this.getRouter().attachRoutePatternMatched((event) => {
+                    //this.getPollings().deleteAllPollings();
+                    callbackName(event)
+                }, controller);
             },
 
             onNavBack: function () {

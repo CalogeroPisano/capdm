@@ -1,0 +1,59 @@
+.mobile-checklist .customCardInputVinCheck {
+    background-color: #EBEBEB !important;
+    border-radius: 30px;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    width: 65%;
+    height: 35%;
+    
+}
+@media only screen and (min-width:1300px) {
+    .mobile-checklist .customCardInputVinCheck{
+        width: 85% !important;
+        height: 65% !important;
+    }
+    .mobile-checklist .titleChecklistInput {
+        font-family: 'ubuntu' !important;
+        font-size: 24px;
+        text-align: center !important;
+        width: 100%;
+        padding-top: 7% !important
+    }
+}
+@media only screen and (max-width:690px) {
+    .mobile-checklist .customCardInputVinCheck{
+        width: 85% !important;
+    }
+    
+
+}
+
+.m-r-2 {
+    margin-right: 10px;
+}
+
+.mobile-checklist .containerCardInputVinCheck {
+    justify-content: center;
+    padding-top: 10%;
+}
+
+
+.mobile-checklist .titleChecklistInput {
+    font-family: 'ubuntu' !important;
+    font-size: 24px;
+    text-align: center !important;
+    width: 100%;
+    padding-top: 15%
+}
+
+.mobile-checklist .containerInputVinChecklist {
+    width: 100%;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.mobile-checklist .buttonSubmit {
+    width: 100%;
+    justify-content: center;
+    
+}
+

@@ -1,0 +1,17 @@
+/* Enter your custom styles here */
+@import "./pages.css";
+@import "./common.css";
+
+
+/*  */
+
+/* set default font for all */
+
+* {
+    font-family: 'ubuntu';
+    font-size: 14px;
+}
+
+body {
+    background-color: #E5E5E5;
+}

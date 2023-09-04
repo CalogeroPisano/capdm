@@ -1,0 +1,214 @@
+/* custom table */
+
+.table-m-ducati>table>thead>tr th {
+    background-color: #0F0F0F;
+}
+
+.table-m-ducati>table>thead>tr th span {
+    color: #FAFAFA !important;
+}
+
+.title-table-ducati {
+    font-family: 'ubuntu' !important;
+    font-size: 18px;
+}
+
+/* end custom table */
+.backIcon span {
+    color: white !important;
+}
+.backIcon:hover span {
+    color: black !important;
+}
+/* custom button Ducati */
+
+.button-ducati>span {
+    background: #CC0000 !important;
+    border-color: #0F0F0F !important;
+    font-size: 10px;
+    color: white !important;
+    height: 100% !important;
+    align-items: center !important;
+}
+
+.button-ducati>span:hover {
+    background: #af0000 !important;
+    border-color: #0F0F0F !important;
+    font-size: 10px;
+    color: white !important;
+}
+
+.button-ducati>span:active {
+    background: #af0000 !important;
+    border-color: #0F0F0F !important;
+    font-size: 10px;
+    color: white !important;
+}
+
+
+.button-ducati-secondary>span {
+    background: #0F0F0F !important;
+    border-color: white !important;
+    font-size: 10px;
+    color: white;
+    height: 100% !important;
+    align-items: center !important;
+}
+
+.button-ducati-secondary>span:hover {
+    background: #0F0F0F !important;
+    border-color: white !important;
+    font-size: 10px;
+    color: white !important;
+}
+
+.button-ducati-secondary>span:active {
+    background: #0F0F0F !important;
+    border-color: white !important;
+    font-size: 10px;
+    color: white !important;
+}
+
+.button-ducati-secondary>span::before {
+    color: white
+}
+
+
+.button-ducati-emphasized>span {
+    background-color: #555555 !important;
+    border: none !important;
+    color: #FAFAFA !important;
+}
+
+.button-ducati-emphasized>span:hover {
+    background-color: #3f3f3f !important;
+    border: none !important;
+    color: white !important;
+}
+
+.button-ducati-emphasized>span:active {
+    background-color: #3f3f3f !important;
+    border: none !important;
+    color: white !important;
+}
+
+.button-ducati-transparent>span {
+    color: #CC0000 !important;
+    border-color: #CC0000 !important;
+}
+
+.button-ducati-transparent>span:hover {
+    color: #af0000 !important;
+    border-color: #af0000 !important;
+    background-color: #EBEBEB !important;
+}
+
+.button-ducati-transparent>span:hover bdi {
+    color: #af0000 !important;
+}
+
+.button-ducati-transparent>span:active {
+    color: #af0000 !important;
+    border-color: #af0000 !important;
+    background-color: #EBEBEB !important;
+}
+
+/* end custom button Ducati */
+
+.sapTntToolHeader .sapMText,
+.sapTntToolHeader .sapMTitle,
+.sapTntToolHeader .sapMLabel {
+    color: white !important;
+}
+.padding-r-l {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+.padding-l-1 {
+    padding-left: 1rem !important;
+}
+.padding-t {
+    padding-top: 1.7rem !important
+}
+
+.tree-table-ducati div:nth-child(2) tr {
+    background-color: #0F0F0F;
+}
+
+.tree-table-ducati div:nth-child(2) tr span {
+    color: #FAFAFA;
+}
+
+.tree-table-ducati div:nth-child(2) tr td:hover {
+    background-color: #0F0F0F;
+}
+
+.tree-table-ducati div:nth-child(2) tr td span:hover {
+    color: #FAFAFA;
+}
+
+.sapUiTableCCnt div tr {
+    background-color: white !important;
+}
+
+.sapUiTableCCnt div tr span {
+    color: black !important;
+}
+
+.sapUiTableCCnt div tr td:hover {
+    background-color: white !important;
+}
+
+.sapUiTableCCnt div tr td span:hover {
+    color: black !important;
+}
+
+.object-status-font-white>span:first-child {
+    color: #ffffff !important;
+}
+
+.object-status-font-white>span:first-child:active {
+    color: #ffffff !important;
+}
+
+.object-status-font-white>span:first-child:hover {
+    color: #ffffff !important;
+}
+
+.languageItem img {
+    width: 1.5rem !important;
+    height: auto !important;
+}
+
+.text-notEditable div {
+    background: none !important;
+}
+
+.colorbackDefault {
+    background-color: #F5F6F7;
+}
+
+.colorbackDefault>div {
+    background-color: #F5F6F7;
+}
+
+.font_bold {
+    font-weight: bold !important;
+    color: black !important;
+}
+
+.custom-wizard-height {
+    height: 23rem !important;
+}
+.custom-wizard-height-checklist {
+    height: 35rem !important;
+    overflow: auto !important;
+}
+.w-90 {
+    width: 90%;
+}
+@media only screen and (max-height: 800px) {
+    .zoom-80 {
+        zoom: 80%;
+    }
+}

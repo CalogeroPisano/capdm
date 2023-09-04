@@ -1,0 +1,79 @@
+.avv-backofficePage .genericTilesButtons {
+    padding-top: 1rem;
+    align-items: center;
+}
+.zoom-90-avv-avanz {
+    zoom: 90% !important;
+}
+
+/* @media only screen and (max-height: 900px) {
+    .avv-backofficePage {
+        zoom:80% !important;
+    }
+    body:has(.avv-backofficePage) .sapMPopover{
+        zoom:80% !important;
+        height: fit-content !important;
+    }
+   
+    
+    :has(.text-area-button)
+    .wizard-association {
+        zoom: 80% !important;
+    }
+} */
+.avv-backofficePage .checklist-created-table {
+    padding-top: 4rem;
+}
+
+.avv-backofficePage .padding-top-4 {
+    padding-top: 4rem;
+}
+
+.avv-backofficePage .hbox-form>div {
+    width: 100% !important;
+    /* padding-right: 2rem;
+    padding-left: 2rem; */
+    margin-bottom: 2rem;
+}
+.avanzProd .hbox-form>div {
+    width: 100% !important;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.table-items-vbox {
+    padding-right: 2rem;
+    padding-left: 2rem;
+
+}
+
+.custom input {
+    background: 0 100% / 100% 0.0625rem no-repeat linear-gradient(0deg, #556b81, #556b81) border-box !important;
+}
+
+.wizard-association>div .sapFDynamicPageContent .sapMWizardProgressNavList li:nth-child(3) .sapMWizardProgressNavStepTitleContainer {
+    width: 10rem !important;
+}
+
+.dialogDetail .pod-firstvbox {
+    width: 100%;
+    padding-top: 1.2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+div:has(.navContainerAvv) {
+    height: 100% !important;
+}
+.navContainerAvv {
+    height: 100% !important;
+}
+
+div[id*='searchForm_avvAvanzProd'] div h5 {   
+    display: none !important;
+}
+
+.searchFormClass_avProd > div > div {
+    padding-bottom: 1rem !important;
+}

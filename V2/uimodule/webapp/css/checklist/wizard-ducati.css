@@ -1,0 +1,30 @@
+.sapMWizardProgressNavStep[data-sap-ui-wpn-step-current="true"] .sapMWizardProgressNavStepCircle {
+    background: #0F0F0F !important;
+    color: #ffffff !important;
+}
+.sapMWizardProgressNavStep[data-sap-ui-wpn-step-current="true"] .sapMWizardProgressNavStepCircle:hover {
+    background: #0F0F0F !important;
+    color: #ffffff !important;
+}
+
+.sapMWizardProgressNavStepCircle {
+    background: #ffffff;
+    border-color: #0F0F0F !important;
+    color: #0F0F0F !important;
+}
+
+.sapMWizardProgressNavStep[data-sap-ui-wpn-step-current="true"] .sapMWizardProgressNavStepCircle::after {
+    background: #0F0F0F !important;
+    
+}
+.sapMWizardProgressNavStep::after {
+    border-bottom-color: #0F0F0F !important;
+}
+.wizard .sapUiIcon::before {
+    color:#ffffff !important
+}
+
+.step2partsInput {
+    padding-right: 20% !important; 
+    padding-top: 3% !important;
+}

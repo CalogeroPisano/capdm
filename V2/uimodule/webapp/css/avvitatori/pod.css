@@ -1,0 +1,237 @@
+.pod {
+    height: 100%;
+}
+
+.podHeader .titleWC {
+    width: 40% !important;
+}
+
+.podHeader .HB-button {
+    width: 3% !important;
+}
+
+.podHeader .logoPodSection {
+    width: 25% !important;
+    justify-content: center;
+}
+
+.podHeader .userNameAndLanguageSectionPod {
+    width: 50% !important;
+    justify-content: end;
+    padding-right: 3rem;
+}
+
+.podHeader .timeAndConnectionSection {
+    width: 50% !important;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+}
+
+.podHeader .icon-vbox>div {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.podHeader .timeText {
+    font-family: 'ubuntu';
+    font-size: 26px;
+}
+
+.podHeader .sizeIcon {
+    font-size: 36px;
+    margin-left: 1rem;
+}
+
+
+.header-ducati:has(.podHeader) {
+    height: 120px !important;
+}
+
+.sapTntToolPageHeader:has(.podHeader) {
+    height: 120px !important;
+}
+
+.podHeader .textHeader {
+    font-size: 20px;
+    font-family: 'ubuntu';
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* text-decoration: underline; */
+}
+.podHeader .textHeader bdi {
+    font-size: 20px;
+    font-family: 'ubuntu';
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: underline;
+}
+
+.podHeader .textHeaderLabel {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.podHeader .textHeaderLabel bdi {
+    font-size: 20px;
+    font-family: 'ubuntu';
+
+}
+
+.podHeader .textOperator {
+    font-size: 22px;
+    font-family: 'ubuntu';
+
+}
+
+.pod .pod-avvitaturesection-header-table {
+    justify-content: start;
+    padding-top: 1rem;
+
+}
+/* @media only screen and (max-height: 800px) {
+    .pod {
+        zoom: 80%;
+    }
+} */
+.pod .messageStripNoVin {
+    height: 15%;
+    width: 80%;
+    justify-content: center;
+    margin: auto;
+}
+
+.pod-header-table-buttons {
+    /* width: 60% !important; */
+    margin-left: auto !important;
+    justify-content: end !important;
+}
+
+.pod .recipe-text {
+    font-size: 18px !important;
+    font-family: 'ubuntu' !important;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.pod .recipe-text-label {
+    height: 100%;
+    display: flex;
+    margin-right: 0.75rem;
+    display: flex;
+    align-items: center;
+}
+
+.pod .recipe-text-label bdi {
+    font-size: 18px !important;
+    font-family: 'ubuntu' !important;
+    color: black;
+    text-transform: uppercase;
+}
+
+.pod .pod-firstvbox {
+    width: 100%;
+    padding-top: 1.2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.pod .pod-secondvbox {
+    width: 40%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.pod .header-table {
+
+    padding-bottom: 0.7rem;
+
+}
+
+.pod .padding-cell {
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+
+.pod .progressbar-hbox {
+    padding-left: 7rem;
+    padding-right: 7rem;
+    height: 5.2% !important;
+}
+
+.pod .progressbar-hbox>div {
+    width: 100% !important;
+}
+
+.pod .progressbar-pod {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.pod .progressbar-pod .sapSuiteStackedMCContainer {
+    max-width: 100% !important;
+    width: 100% !important;
+    max-height: 100% !important;
+}
+
+.pod .progressbar-pod .sapSuiteStackedMCContainer div {
+    height: 30%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100%;
+}
+
+.pod .title-progress-bar {
+    padding-left: 7rem;
+    padding-right: 7rem;
+    width: 100%;
+    justify-content: center;
+    height: 7% !important;
+    align-items: center !important;
+}
+
+.pod .progress-text-label {
+    height: 100%;
+    display: flex;
+}
+
+.pod .sapMITBContent {
+    display: none !important;
+}
+
+.pod .legendStates ul {
+    display: inline-flex !important;
+    width: 100%;
+}
+
+.pod .legendStates li {
+    display: inherit !important;
+    background: none;
+    border-bottom: none !important;
+}
+
+.pod .list_item {
+    margin-top: 1rem;
+    margin-right: 1.5rem;
+    background: none;
+}
+
+.pod .textItem {
+    margin-left: 1rem;
+}
+
+.pod .itemLegend>div:first-child {
+    padding-top: 0.2rem;
+}
+
+.padding-2 {
+    padding-top: 2rem;
+}

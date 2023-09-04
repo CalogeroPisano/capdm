@@ -1,14 +1,16 @@
  <mvc:View controllerName="com.capgemini.DMUsecase.controller.MainView"
   displayBlock="true"
   xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:tnt="sap.tnt"
   xmlns:mvc="sap.ui.core.mvc">
-  <App id="idAppControl" >
-    <pages>
-      <Page title="{i18n>title}">
-        <content>
-          <Button  text="test API CALL" press="testAPI"></Button>
-        </content>
-      </Page>
-    </pages>
-  </App>
+  <tnt:ToolPage id="toolPage" class="sapUiSizeCompact">
+    <tnt:header>
+      <core:Fragment fragmentName="com.capgemini.DMUsecase.view.app.fragments.Header" type="XML" />
+    </tnt:header>
+    <tnt:mainContents>
+      <App id="idAppControl" />
+    </tnt:mainContents>
+    
+  </tnt:ToolPage>
 </mvc:View>
