@@ -12,7 +12,7 @@ function (opaTest) {
   opaTest("Should see the page", function (Given, When, Then) {
 
     // Arrangements
-    Given.iStartMyApp();
+    Given.iStartcapgemini.CapgeminiPOD();
 
     // Actions
     // When.onTheMainPage.iPressTheButton();
@@ -21,7 +21,7 @@ function (opaTest) {
     Then.onTheMainPage.iShouldSeeTheTitle();
 
     // Cleanup
-    Then.iTeardownMyApp();
+    Then.iTeardowncapgemini.CapgeminiPOD();
   });
 
 });

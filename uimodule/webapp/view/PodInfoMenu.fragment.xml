@@ -1,0 +1,11 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ActionSheet
+		title="Choose Your Action"
+		showCancelButton="true"
+		placement="Bottom">
+			<Button text="Vai a POD" press="discriminator" class="fontAction"/>
+			<Button text="Informazioni" press="discriminator" class="fontAction" />
+	</ActionSheet>
+</core:FragmentDefinition>

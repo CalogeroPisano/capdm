@@ -1,0 +1,57 @@
+<mvc:View
+    height="100%"
+    controllerName="capgemini.CapgeminiPOD.controller.Shoporder"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page
+        title="Seleziona un Ordine di Lavoro"
+        class="sapUiContentPadding capgemini.CapgeminiPOD scaled"
+        showNavButton="true" 
+    >
+
+        <customHeader>
+            <Bar>
+                <contentLeft>
+                    <Button icon="sap-icon://slim-arrow-left" press="onNavBack"/>
+                    <Image src="images/cap_2.jpg" height="75%" class="moveLogoUp"/>
+                </contentLeft>
+                <contentMiddle>
+                    <Title text="Seleziona un ordine di produzione" />
+                </contentMiddle>
+                <contentRight>
+                    <Button icon="sap-icon://log" />
+                </contentRight>
+            </Bar>
+        </customHeader>
+
+  
+        <TileContainer
+            id="container"
+            tileDelete="handleTileDelete"
+            class="allarga"
+
+            tiles="{/}"
+        >
+
+            <StandardTile
+                icon="{icon}"
+                number="{QtyDone}/{QtyOrdered}"
+                numberUnit="{ShopOrder} | P: {Priority}"
+                title="Prodotto finito {Material}"
+                info="{status}"
+                infoState="{stateoftile}"
+                press="apriDialog"
+                idshoporder="{id}"
+                class="allarga"
+
+            />
+        </TileContainer>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button text="Indietro" press="onNavBack" />
+                <ToolbarSpacer/>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

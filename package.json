@@ -2,8 +2,9 @@
   "name": "CapgeminiPOD",
   "version": "0.0.1",
   "scripts": {
-    "start": "ui5 serve --config=uimodule/ui5.yaml  --open index.html",
+    "start": "npm run postcss && ui5 serve --config=uimodule/ui5.yaml",
     "build:ui": "run-s  build:uimodule",
+	"postcss": "npx tailwindcss -i ./uimodule/webapp/css/tailwindInput.css -o ./uimodule/webapp/css/tailwindOutput.css",
     "test": "run-s lint karma",
     "karma-ci": "karma start karma-ci.conf.js",
     "clearCoverage": "shx rm -rf coverage",
@@ -13,17 +14,19 @@
     "build:uimodule": "ui5 build --config=uimodule/ui5.yaml --clean-dest --a --dest uimodule/dist --include-task=generateManifestBundle"
   },
   "devDependencies": {
-    "shx": "^0.3.3",
+    "@sap/eslint-plugin-ui5-jsdocs": "^2.0.5",
+    "@sapui5/ts-types": "^1.84.20",
     "@ui5/cli": "^2.11.2",
-    "ui5-middleware-livereload": "^0.5.4",
+    "eslint": "^7.29.0",
     "karma": "^6.3.4",
     "karma-chrome-launcher": "^3.1.0",
     "karma-coverage": "^2.0.3",
     "karma-ui5": "^2.3.4",
     "npm-run-all": "^4.1.5",
-    "eslint": "^7.29.0",
-    "@sap/eslint-plugin-ui5-jsdocs": "^2.0.5",
-    "@sapui5/ts-types": "^1.84.20"
+    "shx": "^0.3.3",
+    "tailwindcss": "^3.3.1",
+    "ui5-middleware-livereload": "^0.5.4",
+	"tailwindcss": "^3.2.2"
   },
   "ui5": {
     "dependencies": [

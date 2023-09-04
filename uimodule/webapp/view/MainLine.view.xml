@@ -1,18 +1,15 @@
-<mvc:View controllerName="capgemini.CapgeminiPOD.controller.MainView" displayBlock="true"
+<mvc:View controllerName="capgemini.CapgeminiPOD.controller.MainLine" displayBlock="true"
   xmlns="sap.m"
   xmlns:mvc="sap.ui.core.mvc">
   <App id="idAppControl">
     <pages>
-      <Page title="{i18n>title}" content="{TileModel>/}">
+      <Page title="{i18n>title}" content="{LineModel>/}">
         <content>
-          <GenericTile class="m-1" header="SFC" subheader="{TileModel>sfc}" press="press">
-            <TileContent footer="{TileModel>statuss}">
+          <GenericTile class="m-1" header="{LineModel>workCenter}" subheader="{LineModel>status}" press="onPressz">
+            <TileContent footer="{LineModel>plant}">
               <VBox>
                 <HBox>
-                  <ObjectNumber class="text-2xl" number="{TileModel>order}"/>
-                </HBox>
-                <HBox>
-                  <ObjectNumber class="text-2xl" number="{TileModel>material/material}"/>
+                  <ObjectNumber class="text-2xl" number="{LineModel>description}"/>
                 </HBox>
 
                 <!-- <HBox justifyContent="End" visible="{=${TileModel>ISSUSPENDED}===1 ? false : true}">

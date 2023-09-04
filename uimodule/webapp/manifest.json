@@ -57,6 +57,9 @@
     "resources": {
       "css": [
         {
+          "uri": "css/app.css"
+        },
+        {
           "uri": "css/style.css"
         }
       ]
@@ -73,16 +76,62 @@
       "routes": [
         {
           "name": "RouteMainView",
-          "pattern": "RouteMainView",
-          "target": ["TargetMainView"]
+          "pattern": "mainview/{workCenter}",
+          "target": [
+            "TargetMainView"
+          ]
+        },
+        {
+          "name": "machine",
+          "pattern": "machine",
+          "target": "machine"
+        },
+        {
+          "name": "main",
+          "pattern": "main",
+          "target": "main"
+        },
+        {
+          "name": "shoporder",
+          "pattern": "shoporder",
+          "target": "shoporder"
+        },
+        {
+          "name": "mainpod",
+          "pattern": "mainpod",
+          "target": "mainpod"
+        },
+        {
+          "name": "mainline",
+          "pattern": "",
+          "target": "mainline"
         }
       ],
       "targets": {
         "TargetMainView": {
           "viewType": "XML",
           "viewLevel": 1,
-          "viewId": "idAppControl",
           "viewName": "MainView"
+        },
+        "machine": {
+          "viewName": "Machine",
+          "viewLevel": 0
+        },
+        "main": {
+          "viewName": "Main",
+          "viewLevel": 3
+        },
+        "shoporder": {
+          "viewName": "Shoporder",
+          "viewLevel": 1
+        },
+        "mainpod": {
+          "viewName": "MainPod",
+          "viewLevel": 2
+        },
+        "mainline": {
+          "viewName": "MainLine",
+          "viewLevel": 2
         }
       }
     }
