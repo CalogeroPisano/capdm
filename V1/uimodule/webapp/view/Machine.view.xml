@@ -1,0 +1,55 @@
+<mvc:View
+    height="100%"
+    controllerName="capgemini.CapgeminiPOD.controller.Machine"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    
+    
+    <Page
+        title="Seleziona un centro di lavoro: Area {modelArea>/area}"
+        class="sapUiContentPadding capgemini.CapgeminiPOD scaled"
+        showNavButton="true">
+
+        <customHeader>
+            <Bar>
+                <contentLeft>
+                    <Button icon="sap-icon://slim-arrow-left" press="navToMain"/>
+                    <Image src="images/cap_2.jpg" height="75%" class="moveLogoUp"/>
+                </contentLeft>
+                <contentMiddle>
+                    <Title text="Seleziona un centro di lavoro: Area {modelArea>/area}" />
+                </contentMiddle>
+                <contentRight>
+                    <Button icon="sap-icon://log" />
+                </contentRight>
+            </Bar>
+        </customHeader>
+
+           
+        <TileContainer
+            id="container"
+            tileDelete="handleTileDelete"
+            class="allarga"
+            tiles="{/}">
+            <StandardTile
+                icon="{icon}"
+                type="Monitor"
+                number="{machinetypedescription}" 
+                title="{Workcenter}"
+                info="{info}"
+                infoState="{status}"
+                press="navToShoporder"
+                numberUnit="{wctype}"
+                class="allarga"
+            />
+        </TileContainer>
+  
+
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <ToolbarSpacer/>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

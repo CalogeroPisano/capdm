@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Menu items="{workcenter>/}" itemSelected="onMenuAction" class="mettisopra">
+        <MenuItem text="{workcenter>workCenter/workCenter}" icon="sap-icon://add-activity-2" />
+    </Menu>
+</core:FragmentDefinition>

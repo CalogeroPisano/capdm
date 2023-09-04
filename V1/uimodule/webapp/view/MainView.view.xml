@@ -1,0 +1,28 @@
+<mvc:View controllerName="capgemini.CapgeminiPOD.controller.MainView" displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <App id="idAppControl">
+    <pages>
+      <Page title="{i18n>title}" content="{TileModel>/}">
+        <content>
+          <GenericTile class="m-1" header="SFC" subheader="{TileModel>sfc}" press="press">
+            <TileContent footer="{TileModel>statuss}">
+              <VBox>
+                <HBox>
+                  <ObjectNumber class="text-2xl" number="{TileModel>order}"/>
+                </HBox>
+                <HBox>
+                  <ObjectNumber class="text-2xl" number="{TileModel>material/material}"/>
+                </HBox>
+
+                <!-- <HBox justifyContent="End" visible="{=${TileModel>ISSUSPENDED}===1 ? false : true}">
+                  <Button type="Emphasized" text="{TileModel>order}" press=".clickLastVansButton"/>
+                </HBox> -->
+              </VBox>
+            </TileContent>
+          </GenericTile>
+        </content>
+      </Page>
+    </pages>
+  </App>
+</mvc:View>
