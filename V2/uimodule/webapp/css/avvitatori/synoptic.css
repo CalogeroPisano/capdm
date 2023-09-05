@@ -28,9 +28,19 @@
     margin-right: 0.5rem;
 }
 
-.avv-synopitc .contentStationCard {
+.sfc .contentStationCard {
     /* justify-content: space-evenly; */
-    margin-left: 4.25rem !important;
+    margin-left: 3.25rem !important;
+    padding-top: 1rem !important
+}
+.sfc .margin-right-10 {
+    margin-right: 10% !important;
+}
+.sfc .contentStationCard span {
+    font-size: large !important;
+} 
+.sfc .sapMTextMaxLine {
+    font-size: x-large;
 }
 
 .avv-synopitc .title span {
@@ -129,28 +139,28 @@
     font-size: 18px !important;
 }
 
-.avv-synopitc .legendStates ul {
+.sfc .legendStates ul {
     display: inline-flex !important;
     width: 100%;
 }
 
-.avv-synopitc .legendStates li {
+.sfc .legendStates li {
     display: inherit !important;
     background: none;
     border-bottom: none !important;
 }
 
-.avv-synopitc .list_item {
+.sfc .list_item {
     margin-top: 1rem;
     margin-right: 1.5rem;
     background: none;
 }
 
-.avv-synopitc .textItem {
+.sfc .textItem {
     margin-left: 1rem;
 }
 
-.avv-synopitc .itemLegend>div:first-child {
+.sfc .itemLegend>div:first-child {
     padding-top: 0.2rem;
 }
 

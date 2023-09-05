@@ -54,13 +54,42 @@ sap.ui.define(
              * @param {boolean} pbReplace? Defines if the hash should be replaced (no browser history entry) or set (browser history entry)
              */
             navTo: function (target, parameters = {}, replace = false) {
-                this.getPollings().deleteAllPollings();
+                
                 this.getRouter().navTo(target, parameters, replace);
+            },
+
+            /**
+             * Convenience method for getting the global model by name in every controller of the application.
+             * @public
+             * @param {string} name the model name
+             * @returns {sap.ui.model.Model} the model instance
+             */
+            getGlobalModel: function (name) {
+                return sap.ui.getCore().getModel(name);
+            },
+
+
+            /**
+            * Get navigation model
+            * @public
+            */
+            getNavigation() {
+                return this.getGlobalModel('navigation');
             },
 
             getRouter: function () {
                 return UIComponent.getRouterFor(this);
             },
+
+
+            /**
+             * Convenience method for checking current route, given the parretn
+            * @public
+            */
+            checkRoute(event, pattern) {
+                return event.getParameter('name') === pattern;
+            },
+
 
             /**
              * Convenience method for setting route matched function.

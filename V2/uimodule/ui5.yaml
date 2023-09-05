@@ -30,4 +30,12 @@ server:
       configuration:
         port: 35729
         path: uimodule/webapp
+    - name: ui5-middleware-http-proxy
+      mountPath: /nodered
+      beforeMiddleware: compression
+      configuration:
+        debug: true
+        baseUrl: http://localhost:1880
+        path: ""
+        secure: false
         

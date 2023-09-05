@@ -5,12 +5,12 @@
     <HBox>
       <Text text="Version of the application 0.1_ALFA build on 04/09/2023"/>
     </HBox>
-    <GenericTile visible="true" header="aa" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" press="goToAdminChecklist">
+    <GenericTile visible="true" header="Operatore" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" press="goToLines">
       <TileContent>
         <ImageContent src="sap-icon://clinical-tast-tracker" />
       </TileContent>
     </GenericTile>
-    <GenericTile visible="true" header="aa" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" press="goToLines">
+    <GenericTile visible="true" header="Checklist Admin" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" press="goToAdminChecklist">
       <TileContent>
         <ImageContent src="sap-icon://history" />
       </TileContent>

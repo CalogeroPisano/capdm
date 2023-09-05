@@ -1,0 +1,80 @@
+<mvc:View controllerName="com.capgemini.DMUsecase.controller.pod.Sfc" displayBlock="true"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:form="sap.ui.layout.form"
+  xmlns:l="sap.ui.layout"
+  xmlns:f="sap.f"
+  xmlns:card="sap.f.cards"
+  xmlns:capgemini="com.capgemini.DMUsecase.component"
+  xmlns:mvc="sap.ui.core.mvc" height="100%">
+  <Page class="sfc" showHeader="true" content="{synopticData>/}" enableScrolling="true">
+    <headerContent>
+      <HBox width="100%" justifyContent="SpaceBetween">
+        <VBox width="10%" justifyContent="Center" alignItems="Center">
+          <SearchField width="90%" />
+        </VBox>
+        <VBox alignItems="Center" width="90%" class="margin-right-10">
+          <List id="legendStates_id" class='legendStates' items="{legendSynopticStates>/}" width="100%">
+            <items>
+              <CustomListItem class="list_item">
+                <HBox class="itemLegend">
+                  <core:HTML content="&lt;div style=&quot;background-color:{legendSynopticStates>COLOR}; display:inline-flex; height:15px; width: 15px&quot; &gt;&lt;/div&gt;"></core:HTML>
+                  <Text class="textItem" text="{i18n>legendSynopticStates>STATE}"></Text>
+                </HBox>
+              </CustomListItem>
+            </items>
+          </List>
+          
+        </VBox>
+      </HBox>
+      
+      
+      
+    </headerContent>
+    <content>
+      
+      <capgemini:Custom_Card class="sapUiMediumMargin" width="18rem" height="20rem">
+        <capgemini:header>
+          <card:Header title="SFC" class="" subtitle="{synopticData>sfc}" iconSrc="sap-icon://machine" />
+        </capgemini:header>
+        <capgemini:content>
+          <!-- <VBox height="10%">
+            <Text></Text>
+          </VBox> -->
+          <VBox height="60%" width="100%" class="contentStationCard" justifyContent="SpaceBetween" alignItems="Start">
+            <HBox>
+              <Label class="mr-2" text="ODL:" design="Bold"></Label>
+              <Title text="{synopticData>order}"></Title>
+            </HBox>
+            <HBox>
+              <Label class="mr-2" text="Materiale:" design="Bold"></Label>
+              <Title text="{synopticData>material/material}"></Title>
+            </HBox>
+            <HBox>
+              <Label class="mr-2" text="Versione:" design="Bold"></Label>
+              <Title text="{synopticData>material/version}"></Title>
+            </HBox>
+            <HBox>
+              <Label class="mr-2" text="Descrizione:" design="Bold"></Label>
+              <Title text="{synopticData>material/description}"></Title>
+            </HBox>
+            
+            
+            
+            <!-- <HBox width="100%" justifyContent="Center">
+              <VBox>
+                <HBox>
+                  <Label class="mr-2" text="{i18n>phase}:" design="Bold"></Label>
+                  <Title class="text-highligthed" text="{synopticData>LAST_OPERATION}"></Title>
+                </HBox>
+                <HBox justifyContent="Center">
+                  <Title class="text-bold" text="{= ${synopticData>LAST_DATETIME} === 'TimeUnavailable' ? '':${synopticData>LAST_DATETIME}}"></Title>
+                </HBox>
+              </VBox>
+            </HBox> -->
+          </VBox>
+        </capgemini:content>
+      </capgemini:Custom_Card>
+    </content>
+  </Page>
+</mvc:View>

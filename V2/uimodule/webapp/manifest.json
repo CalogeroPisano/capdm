@@ -80,6 +80,16 @@
           "name": "Dashboard",
           "pattern": "Dashboard",
           "target": ["TargetDashboard"]
+        },
+        {
+          "name": "Operator.Lines",
+          "pattern": "operator/Lines",
+          "target": ["TargetLines"]
+        },
+        {
+          "name": "Operator.Sfc",
+          "pattern": "operator/Sfc/{workcenter}",
+          "target": ["TargetSfc"]
         }
       ],
       "targets": {
@@ -92,6 +102,16 @@
           "viewType": "XML",
           "viewId": "Dashboard",
           "viewName": "Dashboard"
+        },
+        "TargetLines": {
+          "viewType": "XML",
+          "viewId": "operator.Lines",
+          "viewName": "pod.Lines"
+        },
+        "TargetSfc": {
+          "viewType": "XML",
+          "viewId": "operator.Sfc",
+          "viewName": "pod.Sfc"
         }
       }
     }

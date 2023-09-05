@@ -17,6 +17,9 @@ sap.ui.define(["com/capgemini/DMUsecase/controller/BaseController"], function (C
             sap.ui.getCore().getModel('session').setProperty('/navBackVisible', false);
 
         },
+        goToLines:function() {
+            this.navTo("Operator.Lines");
+        }
 
         
 
