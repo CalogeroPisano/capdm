@@ -13,23 +13,35 @@
                     <Label class="textHeaderLabel" text="{i18n>odp}:"></Label>
                 </VBox>
                 <VBox class="" height="100%">
-                    <Label class="textHeader" text="{podHeader>/WORKCENTER} - {podHeader>/DESCRIPTION}" />
-                    <Label class="textHeader" text="{podHeader>/ODP}" />
+                    <Label class="textHeader" text="PIPPO" />
+                    <Label class="textHeader" text="PLUTO" />
                 </VBox>
             </HBox>
 
         </HBox>
+        <!-- <HBox class="titleWC" alignItems="Center" height="75%">
+            <HBox class="mr-5">
+                <VBox class="mr-4">
+                    <Label class="textHeaderLabel" text="Prodotto finito:"></Label>
+                    <Label class="textHeaderLabel" text="Qta:"></Label>
+                </VBox>
+                <VBox class="" height="100%">
+                    <Label class="textHeader" text="pippo" />
+                    <Label class="textHeader" text="pippo" />
+                </VBox>
+            </HBox>
+
+        </HBox> -->
         <HBox class="logoPodSection" justifyContent="Center">
-            <Image height="54px" src="./images/DucatiLogo.png" />
+            <Image height="54px" src="./images/capgemini.png" />
         </HBox>
         <HBox width="45%" height="100%" justifyContent="End">
             <HBox class="userNameAndLanguageSectionPod">
-                <HBox class="mr-4" alignItems="Center">
+                <!-- <HBox class="mr-4" alignItems="Center">
                     <Image width="2.5rem" src="{= ${session>/Language} === 'IT' ? './images/flags/Italy.png': './images/flags/england.png'}"></Image>
                     <Button class="backIcon" type="Transparent"  icon="sap-icon://navigation-down-arrow" press="handlePopoverLanguagePress"></Button>
-                    <!-- <Image width="2.5rem" src="./images/flags/italy.png"></Image>
-                    <Button type="Transparent" icon="sap-icon://navigation-down-arrow"></Button> -->
-                </HBox>
+                    
+                </HBox> -->
                 <ToolbarSpacer>
                     <layoutData>
                         <OverflowToolbarLayoutData priority="NeverOverflow" maxWidth="20px" />
@@ -37,29 +49,29 @@
                 </ToolbarSpacer>
                 <VBox justifyContent="Center" alignItems="Center">
                     <HBox alignItems="Center">
-                        <Text class="textOperator" text="{session>/IllumLoginName}" />
+                        <Text class="textOperator" text="Pisano" />
 
                     </HBox>
                     <HBox alignItems="Center">
-                        <Text class="textOperator" text="{session>/firstname}" />
+                        <Text class="textOperator" text="Calogero" />
                     </HBox>
                 </VBox>
-                <VBox justifyContent="Center" alignItems="Center">
+                <!-- <VBox justifyContent="Center" alignItems="Center">
                     <Button class="backIcon" type="Transparent" id="_IDGenButton2" icon="sap-icon://navigation-down-arrow" press="handlePopoverLogoutPress"></Button>
-                </VBox>
+                </VBox> -->
             </HBox>
             <HBox class="timeAndConnectionSection">
                 <VBox height="100%" width="80%" justifyContent="Center" alignItems="Center">
-                    <Text class="timeText" text="{podHeader>/CURRENTDATE}"></Text>
-                    <Text class="timeText" text="{podHeader>/CURRENTTIME}"></Text>
+                    <!-- <Text class="timeText" text="{podHeader>/CURRENTTIME}"></Text> -->
+                    <Text class="timeText" text="15:52"></Text>
                 </VBox>
                 <VBox height="100%" width="20%" justifyContent="Start" class="icon-vbox">
-                    <core:Icon visible="{= ${podHeader>/ISCONNECTED} === 1 ? true:false }" src="sap-icon://connected" class="sizeIcon" color="#07ab07">
+                    <core:Icon visible="true" src="sap-icon://connected" class="sizeIcon" color="#07ab07">
                         <core:layoutData>
                             <FlexItemData growFactor="1" />
                         </core:layoutData>
                     </core:Icon>
-                    <core:Icon visible="{= ${podHeader>/ISCONNECTED} === 1 ? false:true }" src="sap-icon://disconnected" class="sizeIcon" color="#ab0f07">
+                    <core:Icon visible="false" src="sap-icon://disconnected" class="sizeIcon" color="#ab0f07">
                         <core:layoutData>
                             <FlexItemData growFactor="1" />
                         </core:layoutData>

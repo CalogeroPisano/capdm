@@ -29,7 +29,7 @@
         </HBox>
       </HBox>
     </HBox>
-      <mvc:XMLView height="100%" visible="false" viewName="com.capgemini.DMUsecase.view.pod.PodHeader" />
+      <mvc:XMLView height="100%" visible="{session>/ISPOD}" viewName="com.capgemini.DMUsecase.view.pod.PodHeader" />
 
 
   </tnt:ToolHeader>

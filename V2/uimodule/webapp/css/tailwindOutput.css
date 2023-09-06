@@ -550,6 +550,10 @@ video {
   margin-right: 1.25rem;
 }
 
+.table {
+  display: table;
+}
+
 .border {
   border-width: 1px;
 }

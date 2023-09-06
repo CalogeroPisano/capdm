@@ -1,6 +1,6 @@
-specVersion: "2.2"
+specVersion: "3.0"
 metadata:
-  name: DM_Module
+  name: dm_module
 type: application
 resources:
   configuration:

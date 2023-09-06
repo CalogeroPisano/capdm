@@ -33,7 +33,7 @@
     </headerContent>
     <content>
       
-      <capgemini:Custom_Card class="sapUiMediumMargin" width="18rem" height="20rem">
+      <capgemini:Custom_Card class="sapUiMediumMargin" width="18rem" height="20rem" press="goToPod(${synopticData>sfc})">
         <capgemini:header>
           <card:Header title="SFC" class="" subtitle="{synopticData>sfc}" iconSrc="sap-icon://machine" />
         </capgemini:header>

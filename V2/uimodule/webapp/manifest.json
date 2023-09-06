@@ -90,6 +90,11 @@
           "name": "Operator.Sfc",
           "pattern": "operator/Sfc/{workcenter}",
           "target": ["TargetSfc"]
+        },
+        {
+          "name": "Operator.Pod",
+          "pattern": "operator/Sfc/pod/{sfc}",
+          "target": ["TargetPod"]
         }
       ],
       "targets": {
@@ -112,6 +117,11 @@
           "viewType": "XML",
           "viewId": "operator.Sfc",
           "viewName": "pod.Sfc"
+        },
+        "TargetPod": {
+          "viewType": "XML",
+          "viewId": "operator.Pod",
+          "viewName": "pod.pod"
         }
       }
     }

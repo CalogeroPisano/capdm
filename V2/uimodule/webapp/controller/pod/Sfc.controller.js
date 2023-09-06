@@ -51,8 +51,11 @@ sap.ui.define(["com/capgemini/DMUsecase/controller/BaseController", 'sap/ui/mode
 
 
             },
-            goToLine: function (line) {
-
+            goToPod: function (sfc) {
+                
+                this.navTo('Operator.Pod', {
+                    sfc: sfc
+                }, false)
             }
 
 

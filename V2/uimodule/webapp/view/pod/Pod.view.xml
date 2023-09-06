@@ -1,0 +1,80 @@
+<mvc:View controllerName="com.capgemini.DMUsecase.controller.pod.Pod" displayBlock="true"
+  xmlns="sap.m"
+  xmlns:ui="sap.ui.table"
+  xmlns:core="sap.ui.core"
+  xmlns:mc="sap.suite.ui.microchart"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Page  showHeader="false">
+    <content>
+      <HBox class="subHeader" width="100%" height="5rem">
+        <HBox class="mr-5 c_mr-3">
+          <VBox class="mr-4">
+            <Label class="textHeaderLabel" text="{i18n>PF}:"></Label>
+
+          </VBox>
+          <VBox class="" height="100%">
+            <Label class="textHeader bold" text="aaaa" />
+          </VBox>
+        </HBox>
+        <HBox class="mr-5 c_ml-3">
+          <VBox class="mr-4">
+            <Label class="textHeaderLabel" text="{i18n>Qta}:"></Label>
+          </VBox>
+          <VBox class="" height="100%">
+            <Label class="textHeader bold" text="aaa" />
+          </VBox>
+        </HBox>
+      </HBox>
+      <VBox>
+        <IconTabBar expanded="true" class="">
+          <items>
+            <IconTabFilter icon="sap-icon://workflow-tasks" key="workflow">
+              <HBox height="40rem">
+                <VBox width="80%" height="100%">
+                  <Table id="id_tableOperazioni" class="table-m-ducati" items="{podData>/}" mode="SingleSelectMaster" selectionChange="handleSelectStep">
+                    <columns>
+                      <Column >
+                        <Text text="{i18n>step}"></Text>
+                      </Column>
+                      <Column >
+                        <Text text="{i18n>operation}"></Text>
+                      </Column>
+                      <Column >
+                        <Text text="{i18n>description}"></Text>
+                      </Column>
+                      <Column >
+                        <Text text="{i18n>info}"></Text>
+                      </Column>
+  
+                    </columns>
+                    <items>
+                      <ColumnListItem >
+                        <cells>
+                          <Text text="{podData>step}"></Text>
+                          <Text text="{podData>step}"></Text>
+                          <Text text="{podData>step}"></Text>
+                          <Text text="{podData>step}"></Text>
+                        </cells>
+                      </ColumnListItem>
+                    </items>
+                  </Table>
+                </VBox>
+                <VBox width="20%" height="100%" class="action-operation">
+                  <VBox alignItems="Center">
+                    <Button type="Emphatize" icon="" text="Start"></Button>
+                    <Button type="" icon="" text="Stop"></Button>
+                    <Button type="" icon="" text="Complete"></Button>
+                  </VBox>
+                </VBox>
+              </HBox>
+            </IconTabFilter>
+            <IconTabFilter icon="sap-icon://survey" key="checklist" count="3">
+              <HBox height="40rem"></HBox>
+            </IconTabFilter>
+          </items>
+        </IconTabBar>
+      </VBox>
+      
+    </content>
+  </Page>
+</mvc:View>

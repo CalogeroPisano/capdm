@@ -2,7 +2,7 @@ sap.ui.define(["com/capgemini/DMUsecase/controller/BaseController", 'sap/ui/mode
     function (Controller, JSONModel, Utils, Button, Popover, library, Fragment) {
         "use strict";
 
-        return Controller.extend("com.capgemini.DMUsecase.controller.avvitatori.pod.PodHeader", {
+        return Controller.extend("com.capgemini.DMUsecase.controller.pod.PodHeader", {
 
             onInit: function () {
                 this.getRouter().attachRoutePatternMatched(this.handleRouteMatched, this);
@@ -17,8 +17,8 @@ sap.ui.define(["com/capgemini/DMUsecase/controller/BaseController", 'sap/ui/mode
                 sap.ui.getCore().getModel('session').setProperty('/navBackVisible', true)
                 //setting utils 
                 Utils.setInstance('Pod.PodHeader', this);
-                this.getNavigation().setNavBack('Operator.Synoptic');
-                const idPod = event.getParameter("arguments").ID;
+                this.getNavigation().setNavBack('Operator.Sfc');
+                const sfc = event.getParameter("arguments").sfc;
                 sap.ui.getCore().getModel('session').setProperty('/ISPOD', true);
                 const that = this;
 

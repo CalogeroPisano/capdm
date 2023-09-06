@@ -113,6 +113,39 @@
     justify-content: end !important;
 }
 
+.subHeader {
+    width: 100%;
+    height: 5rem !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background-color: #d9dcdf !important;
+
+}
+.subHeader bdi {
+    font-size: 2.3rem !important;   
+    color: black !important;
+}
+.subHeader .bold bdi {
+    font-size: 2.3rem !important;   
+    font-weight: bold !important;
+}
+.subHeader span {
+    font-size: 2.3rem !important;
+
+}
+.action-operation {
+    margin-left: 2rem !important;
+    margin-right: 2rem !important;
+    background-color: #d9dcdf !important;
+    border-radius: 40px !important;
+    border: 3px solid !important;
+}
+.c_mr-3 {
+    margin-right: 3rem !important;
+}
+.c_ml-3 {
+    margin-left: 3rem !important;
+}
 .pod .recipe-text {
     font-size: 18px !important;
     font-family: 'ubuntu' !important;
