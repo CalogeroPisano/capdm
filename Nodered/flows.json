@@ -2,6 +2,14 @@
     {
         "id": "8046ae56f323e116",
         "type": "tab",
+        "label": "SAPDMCCustom_OLD",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "717c01147b3fa71f",
+        "type": "tab",
         "label": "SAPDMCCustom",
         "disabled": false,
         "info": "",
@@ -354,12 +362,12 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 300,
-        "y": 480,
+        "x": 440,
+        "y": 500,
         "wires": []
     },
     {
@@ -793,5 +801,1504 @@
                 "9671807a2396dd37"
             ]
         ]
+    },
+    {
+        "id": "67d4c4a5299280da",
+        "type": "oauth2",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "container": "oauth2Response",
+        "grant_type": "client_credentials",
+        "access_token_url": "https://cap-dmc-14v4j2pg.authentication.eu20.hana.ondemand.com/oauth/token",
+        "authorization_endpoint": "",
+        "redirect_uri": "/oauth2/redirect_uri",
+        "open_authentication": "",
+        "username": "",
+        "password": "",
+        "client_id": "sb-6c1b6852-41b5-4644-b5b6-27a5b50db4bc!b20444|dmc-services-quality!b330",
+        "client_secret": "7c63737e-8f01-45b5-8a83-eba37854d5a0$KLnsvvcsrX6sAD7tw9CLM_WYwPAfK4LnbY2gd1bFm2c=",
+        "scope": "",
+        "client_credentials_in_body": false,
+        "rejectUnauthorized": true,
+        "headers": {},
+        "x": 270,
+        "y": 140,
+        "wires": [
+            [
+                "ba2962bf96a7fb3c"
+            ]
+        ]
+    },
+    {
+        "id": "a30c6f88c3fa58d5",
+        "type": "http in",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "url": "/getSFC/:wc",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 80,
+        "y": 140,
+        "wires": [
+            [
+                "67d4c4a5299280da",
+                "313b7c5d4ab24f98"
+            ]
+        ]
+    },
+    {
+        "id": "683a3f2f55a5006b",
+        "type": "http request",
+        "z": "717c01147b3fa71f",
+        "name": "GET_ALLSFC_1",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.test.eu20.dmc.cloud.sap/sfc/v1/worklist/sfcs?allSfcSteps=true&plant=1710&workCenter={{req.params.wc}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 680,
+        "y": 140,
+        "wires": [
+            [
+                "1d0beb19a0f2de07",
+                "0337f9387f8d728e"
+            ]
+        ]
+    },
+    {
+        "id": "ba2962bf96a7fb3c",
+        "type": "function",
+        "z": "717c01147b3fa71f",
+        "name": "function 10",
+        "func": "msg.headers = {\n    Authorization: \"Bearer \" + msg.oauth2Response.access_token}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 140,
+        "wires": [
+            [
+                "683a3f2f55a5006b"
+            ]
+        ]
+    },
+    {
+        "id": "1d0beb19a0f2de07",
+        "type": "http response",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "x": 920,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "313b7c5d4ab24f98",
+        "type": "debug",
+        "z": "717c01147b3fa71f",
+        "name": "getSFC",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 280,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "a7a89e571966e68d",
+        "type": "oauth2",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "container": "oauth2Response",
+        "grant_type": "client_credentials",
+        "access_token_url": "https://cap-dmc-14v4j2pg.authentication.eu20.hana.ondemand.com/oauth/token",
+        "authorization_endpoint": "",
+        "redirect_uri": "/oauth2/redirect_uri",
+        "open_authentication": "",
+        "username": "",
+        "password": "",
+        "client_id": "sb-6c1b6852-41b5-4644-b5b6-27a5b50db4bc!b20444|dmc-services-quality!b330",
+        "client_secret": "7c63737e-8f01-45b5-8a83-eba37854d5a0$KLnsvvcsrX6sAD7tw9CLM_WYwPAfK4LnbY2gd1bFm2c=",
+        "scope": "",
+        "client_credentials_in_body": false,
+        "rejectUnauthorized": true,
+        "headers": {},
+        "x": 270,
+        "y": 280,
+        "wires": [
+            [
+                "4e735e8b54ed8133"
+            ]
+        ]
+    },
+    {
+        "id": "9727250f2321f563",
+        "type": "http in",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "url": "/getSFCDetail/:sfc",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 100,
+        "y": 280,
+        "wires": [
+            [
+                "a7a89e571966e68d",
+                "62e7e325bc7541fc"
+            ]
+        ]
+    },
+    {
+        "id": "aa8466dce2b6f047",
+        "type": "http request",
+        "z": "717c01147b3fa71f",
+        "name": "GET_ALLSFC",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.test.eu20.dmc.cloud.sap/sfc/v1/sfcdetail?plant=1710&sfc={{req.params.sfc}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 680,
+        "y": 280,
+        "wires": [
+            [
+                "666212aa55d8acda"
+            ]
+        ]
+    },
+    {
+        "id": "4e735e8b54ed8133",
+        "type": "function",
+        "z": "717c01147b3fa71f",
+        "name": "function 11",
+        "func": "msg.headers = {\n    Authorization: \"Bearer \" + msg.oauth2Response.access_token}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 280,
+        "wires": [
+            [
+                "aa8466dce2b6f047"
+            ]
+        ]
+    },
+    {
+        "id": "666212aa55d8acda",
+        "type": "http response",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "x": 920,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "62e7e325bc7541fc",
+        "type": "debug",
+        "z": "717c01147b3fa71f",
+        "name": "/getSFCDetail",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "b420e750b6dc0bd4",
+        "type": "oauth2",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "container": "oauth2Response",
+        "grant_type": "client_credentials",
+        "access_token_url": "https://cap-dmc-14v4j2pg.authentication.eu20.hana.ondemand.com/oauth/token",
+        "authorization_endpoint": "",
+        "redirect_uri": "/oauth2/redirect_uri",
+        "open_authentication": "",
+        "username": "",
+        "password": "",
+        "client_id": "sb-6c1b6852-41b5-4644-b5b6-27a5b50db4bc!b20444|dmc-services-quality!b330",
+        "client_secret": "7c63737e-8f01-45b5-8a83-eba37854d5a0$KLnsvvcsrX6sAD7tw9CLM_WYwPAfK4LnbY2gd1bFm2c=",
+        "scope": "",
+        "client_credentials_in_body": false,
+        "rejectUnauthorized": true,
+        "headers": {},
+        "x": 290,
+        "y": 420,
+        "wires": [
+            [
+                "d37b4087d0e59846"
+            ]
+        ]
+    },
+    {
+        "id": "06979ba6c8262906",
+        "type": "http in",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "url": "/getLines",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 70,
+        "y": 420,
+        "wires": [
+            [
+                "b420e750b6dc0bd4",
+                "534c35f99df13022"
+            ]
+        ]
+    },
+    {
+        "id": "80095aebb53243aa",
+        "type": "http request",
+        "z": "717c01147b3fa71f",
+        "name": "GET_ALLWORKCENTER",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.test.eu20.dmc.cloud.sap/workcenter/v2/workcenters?plant=1710",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 730,
+        "y": 420,
+        "wires": [
+            [
+                "9527b516b58b0ea2"
+            ]
+        ]
+    },
+    {
+        "id": "d37b4087d0e59846",
+        "type": "function",
+        "z": "717c01147b3fa71f",
+        "name": "function 12",
+        "func": "msg.headers = {\n    Authorization: \"Bearer \" + msg.oauth2Response.access_token}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 420,
+        "wires": [
+            [
+                "80095aebb53243aa"
+            ]
+        ]
+    },
+    {
+        "id": "3786ef1db195f99a",
+        "type": "http response",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "x": 1100,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "534c35f99df13022",
+        "type": "debug",
+        "z": "717c01147b3fa71f",
+        "name": "getLines",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "5be693b70c82bd7b",
+        "type": "debug",
+        "z": "717c01147b3fa71f",
+        "name": "getALLWORKCENTER",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "9fc8602993ab74f3",
+        "type": "inject",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 540,
+        "wires": [
+            [
+                "b420e750b6dc0bd4"
+            ]
+        ]
+    },
+    {
+        "id": "9527b516b58b0ea2",
+        "type": "function",
+        "z": "717c01147b3fa71f",
+        "name": "function 13",
+        "func": "var appoggio = msg.payload;\nmsg.payload = msg.payload.filter(n => n.customValues.some(attribute => attribute.attribute === 'ISLINE' && attribute.value === '1'));\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 420,
+        "wires": [
+            [
+                "3786ef1db195f99a",
+                "5be693b70c82bd7b"
+            ]
+        ]
+    },
+    {
+        "id": "0337f9387f8d728e",
+        "type": "debug",
+        "z": "717c01147b3fa71f",
+        "name": "getSFC",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "1bd21c71f3a1ab37",
+        "type": "oauth2",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "container": "oauth2Response",
+        "grant_type": "client_credentials",
+        "access_token_url": "https://cap-dmc-14v4j2pg.authentication.eu20.hana.ondemand.com/oauth/token",
+        "authorization_endpoint": "",
+        "redirect_uri": "/oauth2/redirect_uri",
+        "open_authentication": "",
+        "username": "",
+        "password": "",
+        "client_id": "sb-6c1b6852-41b5-4644-b5b6-27a5b50db4bc!b20444|dmc-services-quality!b330",
+        "client_secret": "7c63737e-8f01-45b5-8a83-eba37854d5a0$KLnsvvcsrX6sAD7tw9CLM_WYwPAfK4LnbY2gd1bFm2c=",
+        "scope": "",
+        "client_credentials_in_body": false,
+        "rejectUnauthorized": true,
+        "headers": {},
+        "x": 270,
+        "y": 700,
+        "wires": [
+            [
+                "a87d8f07a37ad9b4"
+            ]
+        ]
+    },
+    {
+        "id": "2fe45dd34b59b55c",
+        "type": "http request",
+        "z": "717c01147b3fa71f",
+        "name": "GET_ALLSFC",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.test.eu20.dmc.cloud.sap/sfc/v1/worklist/sfcs?allSfcSteps=false&plant=1710&workCenter=ASSY01",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 680,
+        "y": 700,
+        "wires": [
+            [
+                "997e69ab6a51851d",
+                "623bf054932e59e1"
+            ]
+        ]
+    },
+    {
+        "id": "a87d8f07a37ad9b4",
+        "type": "function",
+        "z": "717c01147b3fa71f",
+        "name": "function 14",
+        "func": "msg.headers = {\n    Authorization: \"Bearer \" + msg.oauth2Response.access_token}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 700,
+        "wires": [
+            [
+                "2fe45dd34b59b55c"
+            ]
+        ]
+    },
+    {
+        "id": "997e69ab6a51851d",
+        "type": "http response",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "x": 920,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "175340f78b1e5bd0",
+        "type": "debug",
+        "z": "717c01147b3fa71f",
+        "name": "getSFC",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 280,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "623bf054932e59e1",
+        "type": "debug",
+        "z": "717c01147b3fa71f",
+        "name": "getSFC",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "9f9c68d05a648b2f",
+        "type": "http in",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "url": "/getSFCA",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 80,
+        "y": 700,
+        "wires": [
+            [
+                "1bd21c71f3a1ab37",
+                "175340f78b1e5bd0"
+            ]
+        ]
+    },
+    {
+        "id": "5c7155b0906771a0",
+        "type": "inject",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 840,
+        "wires": [
+            [
+                "1bd21c71f3a1ab37"
+            ]
+        ]
+    },
+    {
+        "id": "4f88bdfd77b44ecc",
+        "type": "oauth2",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "container": "oauth2Response",
+        "grant_type": "client_credentials",
+        "access_token_url": "https://cap-dmc-14v4j2pg.authentication.eu20.hana.ondemand.com/oauth/token",
+        "authorization_endpoint": "",
+        "redirect_uri": "/oauth2/redirect_uri",
+        "open_authentication": "",
+        "username": "",
+        "password": "",
+        "client_id": "sb-6c1b6852-41b5-4644-b5b6-27a5b50db4bc!b20444|dmc-services-quality!b330",
+        "client_secret": "7c63737e-8f01-45b5-8a83-eba37854d5a0$KLnsvvcsrX6sAD7tw9CLM_WYwPAfK4LnbY2gd1bFm2c=",
+        "scope": "",
+        "client_credentials_in_body": false,
+        "rejectUnauthorized": true,
+        "headers": {},
+        "x": 290,
+        "y": 960,
+        "wires": [
+            [
+                "8ac6ab85d938c89c"
+            ]
+        ]
+    },
+    {
+        "id": "9a53309b0199f772",
+        "type": "http in",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "url": "/getWcs/:line",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 90,
+        "y": 960,
+        "wires": [
+            [
+                "4f88bdfd77b44ecc",
+                "94f1e7c5a42e0a54"
+            ]
+        ]
+    },
+    {
+        "id": "cc83605224c548ca",
+        "type": "http request",
+        "z": "717c01147b3fa71f",
+        "name": "GET_ALLWORKCENTER",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.test.eu20.dmc.cloud.sap/workcenter/v2/workcenters?plant=1710&workCenter={{req.params.line}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 730,
+        "y": 960,
+        "wires": [
+            [
+                "a27009cfb5dcaf9c"
+            ]
+        ]
+    },
+    {
+        "id": "8ac6ab85d938c89c",
+        "type": "function",
+        "z": "717c01147b3fa71f",
+        "name": "function 15",
+        "func": "msg.headers = {\n    Authorization: \"Bearer \" + msg.oauth2Response.access_token}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 960,
+        "wires": [
+            [
+                "cc83605224c548ca"
+            ]
+        ]
+    },
+    {
+        "id": "01ec3cafc0d169a9",
+        "type": "http response",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "x": 1100,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "94f1e7c5a42e0a54",
+        "type": "debug",
+        "z": "717c01147b3fa71f",
+        "name": "getLines",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "695f3deafaead384",
+        "type": "debug",
+        "z": "717c01147b3fa71f",
+        "name": "getALLWORKCENTER",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "a2cbf65df8abb301",
+        "type": "inject",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1080,
+        "wires": [
+            [
+                "4f88bdfd77b44ecc"
+            ]
+        ]
+    },
+    {
+        "id": "a27009cfb5dcaf9c",
+        "type": "function",
+        "z": "717c01147b3fa71f",
+        "name": "function 16",
+        "func": "var appoggio = msg.payload;\nmsg.payload = msg.payload[0].members;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 960,
+        "wires": [
+            [
+                "01ec3cafc0d169a9",
+                "695f3deafaead384"
+            ]
+        ]
+    },
+    {
+        "id": "a35b2a5c34855818",
+        "type": "oauth2",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "container": "oauth2Response",
+        "grant_type": "client_credentials",
+        "access_token_url": "https://cap-dmc-14v4j2pg.authentication.eu20.hana.ondemand.com/oauth/token",
+        "authorization_endpoint": "",
+        "redirect_uri": "/oauth2/redirect_uri",
+        "open_authentication": "",
+        "username": "",
+        "password": "",
+        "client_id": "sb-6c1b6852-41b5-4644-b5b6-27a5b50db4bc!b20444|dmc-services-quality!b330",
+        "client_secret": "7c63737e-8f01-45b5-8a83-eba37854d5a0$KLnsvvcsrX6sAD7tw9CLM_WYwPAfK4LnbY2gd1bFm2c=",
+        "scope": "",
+        "client_credentials_in_body": false,
+        "rejectUnauthorized": true,
+        "headers": {},
+        "x": 450,
+        "y": 1280,
+        "wires": [
+            [
+                "3405f02ef5505647"
+            ]
+        ]
+    },
+    {
+        "id": "52b41a0d4f88d9fd",
+        "type": "http in",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "url": "/startSfc",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 90,
+        "y": 1260,
+        "wires": [
+            [
+                "a35b2a5c34855818",
+                "71bbd45e3758df8e"
+            ]
+        ],
+        "info": "{\r\n   \"plant\": ,\r\n   \"operation\": ,\r\n   \"quantity\": 1,\r\n   \"resource\": ,\r\n   \"sfc\":\r\n}"
+    },
+    {
+        "id": "4070ebea34d52fae",
+        "type": "http request",
+        "z": "717c01147b3fa71f",
+        "name": "START_SFC",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.test.eu20.dmc.cloud.sap/sfc/v1/sfcs/start?async=false",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 830,
+        "y": 1220,
+        "wires": [
+            [
+                "939e0268d88d061c",
+                "7a6f5d7091325f8d"
+            ]
+        ]
+    },
+    {
+        "id": "3405f02ef5505647",
+        "type": "function",
+        "z": "717c01147b3fa71f",
+        "name": "function 23",
+        "func": "msg.headers = {\n    Authorization: \"Bearer \" + msg.oauth2Response.access_token};\nmsg.payload = {\n   \"plant\": msg.payload.plant,\n   \"operation\": msg.payload.operation,\n   \"quantity\": 1,\n   \"resource\": msg.payload.resource,\n   \"sfcs\": [\n      msg.payload.sfc,\n   ],\n   \"processLot\": null\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 1160,
+        "wires": [
+            [
+                "4070ebea34d52fae"
+            ]
+        ]
+    },
+    {
+        "id": "939e0268d88d061c",
+        "type": "http response",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "x": 1220,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "7a6f5d7091325f8d",
+        "type": "debug",
+        "z": "717c01147b3fa71f",
+        "name": "startSFC",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "71bbd45e3758df8e",
+        "type": "debug",
+        "z": "717c01147b3fa71f",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "f6c3734310ed5d00",
+        "type": "oauth2",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "container": "oauth2Response",
+        "grant_type": "client_credentials",
+        "access_token_url": "https://cap-dmc-14v4j2pg.authentication.eu20.hana.ondemand.com/oauth/token",
+        "authorization_endpoint": "",
+        "redirect_uri": "/oauth2/redirect_uri",
+        "open_authentication": "",
+        "username": "",
+        "password": "",
+        "client_id": "sb-6c1b6852-41b5-4644-b5b6-27a5b50db4bc!b20444|dmc-services-quality!b330",
+        "client_secret": "7c63737e-8f01-45b5-8a83-eba37854d5a0$KLnsvvcsrX6sAD7tw9CLM_WYwPAfK4LnbY2gd1bFm2c=",
+        "scope": "",
+        "client_credentials_in_body": false,
+        "rejectUnauthorized": true,
+        "headers": {},
+        "x": 430,
+        "y": 1540,
+        "wires": [
+            [
+                "a49a1587849e3860"
+            ]
+        ]
+    },
+    {
+        "id": "16df748df1951248",
+        "type": "http in",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "url": "/completeSfc",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 90,
+        "y": 1520,
+        "wires": [
+            [
+                "f6c3734310ed5d00",
+                "06f39e09351664a7"
+            ]
+        ],
+        "info": "{\r\n   \"plant\": ,\r\n   \"operation\": ,\r\n   \"resource\": ,\r\n   \"sfc\": ,\r\n   \"order: \r\n}"
+    },
+    {
+        "id": "70013710b2a37a52",
+        "type": "http request",
+        "z": "717c01147b3fa71f",
+        "name": "COMPLETE_SFC",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.test.eu20.dmc.cloud.sap/sfc/v1/sfcs/complete?async=false",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 790,
+        "y": 1560,
+        "wires": [
+            [
+                "a8eaca355dfa091e",
+                "c7b3b0fa8aef1cfe"
+            ]
+        ]
+    },
+    {
+        "id": "a49a1587849e3860",
+        "type": "function",
+        "z": "717c01147b3fa71f",
+        "name": "function 24",
+        "func": "msg.headers = {\n    Authorization: \"Bearer \" + msg.oauth2Response.access_token};\nmsg.plant = msg.payload.plant;\nmsg.operation = msg.payload.operation;\nmsg.resource = msg.payload.resource;\nmsg.sfc = msg.payload.sfc;\nmsg.order = msg.payload.order;\n\nmsg.payload = {\n   \"plant\": msg.payload.plant,\n   \"operation\": msg.payload.operation,\n   \"quantity\": 1,\n   \"resource\": msg.payload.resource,\n   \"sfcs\": [\n      msg.payload.sfc,\n   ],\n   \"processLot\": null\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 1420,
+        "wires": [
+            [
+                "70013710b2a37a52",
+                "bae4091268c02987"
+            ]
+        ]
+    },
+    {
+        "id": "a8eaca355dfa091e",
+        "type": "debug",
+        "z": "717c01147b3fa71f",
+        "name": "complete msg",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "06f39e09351664a7",
+        "type": "debug",
+        "z": "717c01147b3fa71f",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "c7b3b0fa8aef1cfe",
+        "type": "switch",
+        "z": "717c01147b3fa71f",
+        "name": "ifStatusCode200",
+        "property": "statusCode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "200",
+                "vt": "num"
+            },
+            {
+                "t": "neq",
+                "v": "200",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1030,
+        "y": 1500,
+        "wires": [
+            [
+                "d06fc6656efe12b4"
+            ],
+            [
+                "9874b4216f877b73"
+            ]
+        ]
+    },
+    {
+        "id": "5d6130efb03c5426",
+        "type": "oauth2",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "container": "oauth2Response",
+        "grant_type": "client_credentials",
+        "access_token_url": "https://cap-dmc-14v4j2pg.authentication.eu20.hana.ondemand.com/oauth/token",
+        "authorization_endpoint": "",
+        "redirect_uri": "/oauth2/redirect_uri",
+        "open_authentication": "",
+        "username": "",
+        "password": "",
+        "client_id": "sb-6c1b6852-41b5-4644-b5b6-27a5b50db4bc!b20444|dmc-services-quality!b330",
+        "client_secret": "7c63737e-8f01-45b5-8a83-eba37854d5a0$KLnsvvcsrX6sAD7tw9CLM_WYwPAfK4LnbY2gd1bFm2c=",
+        "scope": "",
+        "client_credentials_in_body": false,
+        "rejectUnauthorized": true,
+        "headers": {},
+        "x": 470,
+        "y": 1980,
+        "wires": [
+            [
+                "c4146a44269b5fd2"
+            ]
+        ]
+    },
+    {
+        "id": "4a5fd2fa8badc40d",
+        "type": "http in",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "url": "/test",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 100,
+        "y": 1960,
+        "wires": [
+            [
+                "5d6130efb03c5426",
+                "b17b89c96d00d72b"
+            ]
+        ],
+        "info": "{\r\n   \"plant\": ,\r\n   \"operation\": ,\r\n   \"quantity\": 1,\r\n   \"resource\": ,\r\n   \"sfc\":\r\n}"
+    },
+    {
+        "id": "b81b8b14801d8129",
+        "type": "debug",
+        "z": "717c01147b3fa71f",
+        "name": "getsfc",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1010,
+        "y": 2080,
+        "wires": []
+    },
+    {
+        "id": "b17b89c96d00d72b",
+        "type": "debug",
+        "z": "717c01147b3fa71f",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 1860,
+        "wires": []
+    },
+    {
+        "id": "13f38462f300ad5b",
+        "type": "http request",
+        "z": "717c01147b3fa71f",
+        "name": "GET_ALLSFC",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.test.eu20.dmc.cloud.sap/sfc/v1/worklist/sfcs?allSfcSteps=false&page.size=20&plant={{payload.plant}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 840,
+        "y": 1860,
+        "wires": [
+            [
+                "c67ef5ec5ba7c6fe",
+                "b81b8b14801d8129"
+            ]
+        ]
+    },
+    {
+        "id": "c4146a44269b5fd2",
+        "type": "function",
+        "z": "717c01147b3fa71f",
+        "name": "function 25",
+        "func": "msg.headers = {\n    Authorization: \"Bearer \" + msg.oauth2Response.access_token}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 1940,
+        "wires": [
+            [
+                "13f38462f300ad5b"
+            ]
+        ]
+    },
+    {
+        "id": "c67ef5ec5ba7c6fe",
+        "type": "http response",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "x": 1080,
+        "y": 1940,
+        "wires": []
+    },
+    {
+        "id": "a9e085a2d57addd9",
+        "type": "function",
+        "z": "717c01147b3fa71f",
+        "name": "function 26",
+        "func": "flow.set(\"a\",2);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 2100,
+        "wires": [
+            [
+                "d9e857ab10c12a35"
+            ]
+        ]
+    },
+    {
+        "id": "d9e857ab10c12a35",
+        "type": "debug",
+        "z": "717c01147b3fa71f",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "a",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 2100,
+        "wires": []
+    },
+    {
+        "id": "35d25261997fc5bc",
+        "type": "inject",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 80,
+        "y": 2180,
+        "wires": [
+            [
+                "a9e085a2d57addd9"
+            ]
+        ]
+    },
+    {
+        "id": "af03197804e62b86",
+        "type": "function",
+        "z": "717c01147b3fa71f",
+        "name": "function 27",
+        "func": "msg.headers = {\n    Authorization: \"Bearer \" + msg.oauth2Response.access_token};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1590,
+        "y": 1380,
+        "wires": [
+            [
+                "b877350e4f86178f",
+                "01df78ad9cf5a867"
+            ]
+        ]
+    },
+    {
+        "id": "b877350e4f86178f",
+        "type": "http request",
+        "z": "717c01147b3fa71f",
+        "name": "GET_ALLSFC",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.test.eu20.dmc.cloud.sap/sfc/v1/worklist/sfcs?allSfcSteps=false&filter.operation={{operation}}&filter.order={{order}}&plant={{plant}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1800,
+        "y": 1500,
+        "wires": [
+            [
+                "9f7eac2568443d80",
+                "f987d12fd467254c"
+            ]
+        ]
+    },
+    {
+        "id": "dc66f128b08f52aa",
+        "type": "debug",
+        "z": "717c01147b3fa71f",
+        "name": "complete msg",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1760,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "d06fc6656efe12b4",
+        "type": "http response",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "x": 1340,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "9874b4216f877b73",
+        "type": "switch",
+        "z": "717c01147b3fa71f",
+        "name": "OperationSetup",
+        "property": "operation",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "SETUP",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "SETUP",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1300,
+        "y": 1460,
+        "wires": [
+            [
+                "af03197804e62b86"
+            ],
+            [
+                "54dc5551aecacf01"
+            ]
+        ]
+    },
+    {
+        "id": "54dc5551aecacf01",
+        "type": "http response",
+        "z": "717c01147b3fa71f",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "x": 1520,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "01df78ad9cf5a867",
+        "type": "debug",
+        "z": "717c01147b3fa71f",
+        "name": "complete msg",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1799.5999755859375,
+        "y": 1311.2000732421875,
+        "wires": []
+    },
+    {
+        "id": "bae4091268c02987",
+        "type": "debug",
+        "z": "717c01147b3fa71f",
+        "name": "complete msg",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "9f7eac2568443d80",
+        "type": "function",
+        "z": "717c01147b3fa71f",
+        "name": "function 28",
+        "func": "msg.headers = {\n    Authorization: \"Bearer \" + msg.oauth2Response.access_token};\nmsg.payload = {\n   \"plant\": msg.plant,\n   \"operation\": msg.operation,\n   \"quantity\": 1,\n   \"resource\": msg.resource,\n   \"sfcs\": msg.payload.filter(o => o.quantityInQueue === 1).map(o => o.sfc),\n   \"processLot\": null\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1770,
+        "y": 1600,
+        "wires": [
+            [
+                "dc66f128b08f52aa",
+                "a0ed79277a5ac6bb"
+            ]
+        ]
+    },
+    {
+        "id": "a0ed79277a5ac6bb",
+        "type": "http request",
+        "z": "717c01147b3fa71f",
+        "d": true,
+        "name": "START_SFC",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.test.eu20.dmc.cloud.sap/sfc/v1/sfcs/start?async=false",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1910,
+        "y": 1860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f987d12fd467254c",
+        "type": "debug",
+        "z": "717c01147b3fa71f",
+        "name": "getallsfc",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2020,
+        "y": 1560,
+        "wires": []
     }
 ]

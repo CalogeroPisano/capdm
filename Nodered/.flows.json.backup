@@ -1,0 +1,797 @@
+[
+    {
+        "id": "8046ae56f323e116",
+        "type": "tab",
+        "label": "SAPDMCCustom",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "07fd61576f711d1c",
+        "type": "oauth2",
+        "z": "8046ae56f323e116",
+        "name": "",
+        "container": "oauth2Response",
+        "grant_type": "client_credentials",
+        "access_token_url": "https://cap-dmc-14v4j2pg.authentication.eu20.hana.ondemand.com/oauth/token",
+        "authorization_endpoint": "",
+        "redirect_uri": "/oauth2/redirect_uri",
+        "open_authentication": "",
+        "username": "",
+        "password": "",
+        "client_id": "sb-6c1b6852-41b5-4644-b5b6-27a5b50db4bc!b20444|dmc-services-quality!b330",
+        "client_secret": "7c63737e-8f01-45b5-8a83-eba37854d5a0$KLnsvvcsrX6sAD7tw9CLM_WYwPAfK4LnbY2gd1bFm2c=",
+        "scope": "",
+        "client_credentials_in_body": false,
+        "rejectUnauthorized": true,
+        "headers": {},
+        "x": 270,
+        "y": 140,
+        "wires": [
+            [
+                "d1869bab8f0fae10"
+            ]
+        ]
+    },
+    {
+        "id": "3303e7e01cf94f4d",
+        "type": "http in",
+        "z": "8046ae56f323e116",
+        "name": "",
+        "url": "/getSFC/:wc",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 80,
+        "y": 140,
+        "wires": [
+            [
+                "07fd61576f711d1c",
+                "b5569a3d4c74de6b"
+            ]
+        ]
+    },
+    {
+        "id": "8732ce91effee1ed",
+        "type": "http request",
+        "z": "8046ae56f323e116",
+        "name": "GET_ALLSFC",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.test.eu20.dmc.cloud.sap/sfc/v1/worklist/sfcs?allSfcSteps=true&plant=1710&workCenter={{req.params.wc}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 680,
+        "y": 140,
+        "wires": [
+            [
+                "dab8884bccacfbb1",
+                "2c1a8cee5890c18c"
+            ]
+        ]
+    },
+    {
+        "id": "d1869bab8f0fae10",
+        "type": "function",
+        "z": "8046ae56f323e116",
+        "name": "function 10",
+        "func": "msg.headers = {\n    Authorization: \"Bearer \" + msg.oauth2Response.access_token}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 140,
+        "wires": [
+            [
+                "8732ce91effee1ed"
+            ]
+        ]
+    },
+    {
+        "id": "dab8884bccacfbb1",
+        "type": "http response",
+        "z": "8046ae56f323e116",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "x": 920,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "b5569a3d4c74de6b",
+        "type": "debug",
+        "z": "8046ae56f323e116",
+        "name": "getSFC",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 280,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "5247ed1ec80112d4",
+        "type": "oauth2",
+        "z": "8046ae56f323e116",
+        "name": "",
+        "container": "oauth2Response",
+        "grant_type": "client_credentials",
+        "access_token_url": "https://cap-dmc-14v4j2pg.authentication.eu20.hana.ondemand.com/oauth/token",
+        "authorization_endpoint": "",
+        "redirect_uri": "/oauth2/redirect_uri",
+        "open_authentication": "",
+        "username": "",
+        "password": "",
+        "client_id": "sb-6c1b6852-41b5-4644-b5b6-27a5b50db4bc!b20444|dmc-services-quality!b330",
+        "client_secret": "7c63737e-8f01-45b5-8a83-eba37854d5a0$KLnsvvcsrX6sAD7tw9CLM_WYwPAfK4LnbY2gd1bFm2c=",
+        "scope": "",
+        "client_credentials_in_body": false,
+        "rejectUnauthorized": true,
+        "headers": {},
+        "x": 270,
+        "y": 280,
+        "wires": [
+            [
+                "81f949b2a16ee977"
+            ]
+        ]
+    },
+    {
+        "id": "b35f9642e77ff892",
+        "type": "http in",
+        "z": "8046ae56f323e116",
+        "name": "",
+        "url": "/getSFCDetail/:sfc",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 100,
+        "y": 280,
+        "wires": [
+            [
+                "5247ed1ec80112d4",
+                "c69214b191a3418c"
+            ]
+        ]
+    },
+    {
+        "id": "27a5bae8284875eb",
+        "type": "http request",
+        "z": "8046ae56f323e116",
+        "name": "GET_ALLSFC",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.test.eu20.dmc.cloud.sap/sfc/v1/sfcdetail?plant=1710&sfc={{req.params.sfc}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 680,
+        "y": 280,
+        "wires": [
+            [
+                "c0f0b2a435296a75"
+            ]
+        ]
+    },
+    {
+        "id": "81f949b2a16ee977",
+        "type": "function",
+        "z": "8046ae56f323e116",
+        "name": "function 11",
+        "func": "msg.headers = {\n    Authorization: \"Bearer \" + msg.oauth2Response.access_token}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 280,
+        "wires": [
+            [
+                "27a5bae8284875eb"
+            ]
+        ]
+    },
+    {
+        "id": "c0f0b2a435296a75",
+        "type": "http response",
+        "z": "8046ae56f323e116",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "x": 920,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "c69214b191a3418c",
+        "type": "debug",
+        "z": "8046ae56f323e116",
+        "name": "/getSFCDetail",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "0788b80ab1e6534d",
+        "type": "oauth2",
+        "z": "8046ae56f323e116",
+        "name": "",
+        "container": "oauth2Response",
+        "grant_type": "client_credentials",
+        "access_token_url": "https://cap-dmc-14v4j2pg.authentication.eu20.hana.ondemand.com/oauth/token",
+        "authorization_endpoint": "",
+        "redirect_uri": "/oauth2/redirect_uri",
+        "open_authentication": "",
+        "username": "",
+        "password": "",
+        "client_id": "sb-6c1b6852-41b5-4644-b5b6-27a5b50db4bc!b20444|dmc-services-quality!b330",
+        "client_secret": "7c63737e-8f01-45b5-8a83-eba37854d5a0$KLnsvvcsrX6sAD7tw9CLM_WYwPAfK4LnbY2gd1bFm2c=",
+        "scope": "",
+        "client_credentials_in_body": false,
+        "rejectUnauthorized": true,
+        "headers": {},
+        "x": 290,
+        "y": 420,
+        "wires": [
+            [
+                "e0f85d7104501064"
+            ]
+        ]
+    },
+    {
+        "id": "ee459c08a9fc6295",
+        "type": "http in",
+        "z": "8046ae56f323e116",
+        "name": "",
+        "url": "/getLines",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 70,
+        "y": 420,
+        "wires": [
+            [
+                "0788b80ab1e6534d",
+                "7802110e7a5ad8bc"
+            ]
+        ]
+    },
+    {
+        "id": "9f13de5051d60df5",
+        "type": "http request",
+        "z": "8046ae56f323e116",
+        "name": "GET_ALLWORKCENTER",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.test.eu20.dmc.cloud.sap/workcenter/v2/workcenters?plant=1710",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 730,
+        "y": 420,
+        "wires": [
+            [
+                "099c22076d7168b5"
+            ]
+        ]
+    },
+    {
+        "id": "e0f85d7104501064",
+        "type": "function",
+        "z": "8046ae56f323e116",
+        "name": "function 12",
+        "func": "msg.headers = {\n    Authorization: \"Bearer \" + msg.oauth2Response.access_token}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 420,
+        "wires": [
+            [
+                "9f13de5051d60df5"
+            ]
+        ]
+    },
+    {
+        "id": "5a307a638e59a60a",
+        "type": "http response",
+        "z": "8046ae56f323e116",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "x": 1100,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "7802110e7a5ad8bc",
+        "type": "debug",
+        "z": "8046ae56f323e116",
+        "name": "getLines",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "c5e026d7f308e26c",
+        "type": "debug",
+        "z": "8046ae56f323e116",
+        "name": "getALLWORKCENTER",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "76877c7614d62a76",
+        "type": "inject",
+        "z": "8046ae56f323e116",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 540,
+        "wires": [
+            [
+                "0788b80ab1e6534d"
+            ]
+        ]
+    },
+    {
+        "id": "099c22076d7168b5",
+        "type": "function",
+        "z": "8046ae56f323e116",
+        "name": "function 13",
+        "func": "var appoggio = msg.payload;\nmsg.payload = msg.payload.filter(n => n.customValues.some(attribute => attribute.attribute === 'ISLINE' && attribute.value === '1'));\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 420,
+        "wires": [
+            [
+                "5a307a638e59a60a",
+                "c5e026d7f308e26c"
+            ]
+        ]
+    },
+    {
+        "id": "2c1a8cee5890c18c",
+        "type": "debug",
+        "z": "8046ae56f323e116",
+        "name": "getSFC",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "d46db0e3cef271f2",
+        "type": "oauth2",
+        "z": "8046ae56f323e116",
+        "name": "",
+        "container": "oauth2Response",
+        "grant_type": "client_credentials",
+        "access_token_url": "https://cap-dmc-14v4j2pg.authentication.eu20.hana.ondemand.com/oauth/token",
+        "authorization_endpoint": "",
+        "redirect_uri": "/oauth2/redirect_uri",
+        "open_authentication": "",
+        "username": "",
+        "password": "",
+        "client_id": "sb-6c1b6852-41b5-4644-b5b6-27a5b50db4bc!b20444|dmc-services-quality!b330",
+        "client_secret": "7c63737e-8f01-45b5-8a83-eba37854d5a0$KLnsvvcsrX6sAD7tw9CLM_WYwPAfK4LnbY2gd1bFm2c=",
+        "scope": "",
+        "client_credentials_in_body": false,
+        "rejectUnauthorized": true,
+        "headers": {},
+        "x": 270,
+        "y": 700,
+        "wires": [
+            [
+                "bf200b2f9555beac"
+            ]
+        ]
+    },
+    {
+        "id": "b2ca4613166b6c14",
+        "type": "http request",
+        "z": "8046ae56f323e116",
+        "name": "GET_ALLSFC",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.test.eu20.dmc.cloud.sap/sfc/v1/worklist/sfcs?allSfcSteps=false&plant=1710&workCenter=ASSY01",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 680,
+        "y": 700,
+        "wires": [
+            [
+                "ba93acc4533db13a",
+                "b3fb96a91406aac7"
+            ]
+        ]
+    },
+    {
+        "id": "bf200b2f9555beac",
+        "type": "function",
+        "z": "8046ae56f323e116",
+        "name": "function 14",
+        "func": "msg.headers = {\n    Authorization: \"Bearer \" + msg.oauth2Response.access_token}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 700,
+        "wires": [
+            [
+                "b2ca4613166b6c14"
+            ]
+        ]
+    },
+    {
+        "id": "ba93acc4533db13a",
+        "type": "http response",
+        "z": "8046ae56f323e116",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "x": 920,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "1628ef8d9b6a730a",
+        "type": "debug",
+        "z": "8046ae56f323e116",
+        "name": "getSFC",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 280,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "b3fb96a91406aac7",
+        "type": "debug",
+        "z": "8046ae56f323e116",
+        "name": "getSFC",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "471febe2f6de3d15",
+        "type": "http in",
+        "z": "8046ae56f323e116",
+        "name": "",
+        "url": "/getSFCA",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 80,
+        "y": 700,
+        "wires": [
+            [
+                "d46db0e3cef271f2",
+                "1628ef8d9b6a730a"
+            ]
+        ]
+    },
+    {
+        "id": "03ad442247f976c1",
+        "type": "inject",
+        "z": "8046ae56f323e116",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 840,
+        "wires": [
+            [
+                "d46db0e3cef271f2"
+            ]
+        ]
+    },
+    {
+        "id": "b96a55670329ca4f",
+        "type": "oauth2",
+        "z": "8046ae56f323e116",
+        "name": "",
+        "container": "oauth2Response",
+        "grant_type": "client_credentials",
+        "access_token_url": "https://cap-dmc-14v4j2pg.authentication.eu20.hana.ondemand.com/oauth/token",
+        "authorization_endpoint": "",
+        "redirect_uri": "/oauth2/redirect_uri",
+        "open_authentication": "",
+        "username": "",
+        "password": "",
+        "client_id": "sb-6c1b6852-41b5-4644-b5b6-27a5b50db4bc!b20444|dmc-services-quality!b330",
+        "client_secret": "7c63737e-8f01-45b5-8a83-eba37854d5a0$KLnsvvcsrX6sAD7tw9CLM_WYwPAfK4LnbY2gd1bFm2c=",
+        "scope": "",
+        "client_credentials_in_body": false,
+        "rejectUnauthorized": true,
+        "headers": {},
+        "x": 290,
+        "y": 960,
+        "wires": [
+            [
+                "146d0d76f7bd94a1"
+            ]
+        ]
+    },
+    {
+        "id": "7a66bd5377fe3a59",
+        "type": "http in",
+        "z": "8046ae56f323e116",
+        "name": "",
+        "url": "/geWcs/:line",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 80,
+        "y": 960,
+        "wires": [
+            [
+                "b96a55670329ca4f",
+                "a9d3cdcb7e43bbe6"
+            ]
+        ]
+    },
+    {
+        "id": "bd8edb21756f82e2",
+        "type": "http request",
+        "z": "8046ae56f323e116",
+        "name": "GET_ALLWORKCENTER",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.test.eu20.dmc.cloud.sap/workcenter/v2/workcenters?plant=1710&workCenter={{req.params.line}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 730,
+        "y": 960,
+        "wires": [
+            [
+                "ef5e1089cdc74a9d"
+            ]
+        ]
+    },
+    {
+        "id": "146d0d76f7bd94a1",
+        "type": "function",
+        "z": "8046ae56f323e116",
+        "name": "function 15",
+        "func": "msg.headers = {\n    Authorization: \"Bearer \" + msg.oauth2Response.access_token}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 960,
+        "wires": [
+            [
+                "bd8edb21756f82e2"
+            ]
+        ]
+    },
+    {
+        "id": "91d667237768e8f5",
+        "type": "http response",
+        "z": "8046ae56f323e116",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "x": 1100,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "a9d3cdcb7e43bbe6",
+        "type": "debug",
+        "z": "8046ae56f323e116",
+        "name": "getLines",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "9671807a2396dd37",
+        "type": "debug",
+        "z": "8046ae56f323e116",
+        "name": "getALLWORKCENTER",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "6a10f97bbab7aebc",
+        "type": "inject",
+        "z": "8046ae56f323e116",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1080,
+        "wires": [
+            [
+                "b96a55670329ca4f"
+            ]
+        ]
+    },
+    {
+        "id": "ef5e1089cdc74a9d",
+        "type": "function",
+        "z": "8046ae56f323e116",
+        "name": "function 16",
+        "func": "var appoggio = msg.payload;\nmsg.payload = msg.payload[0].members;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 960,
+        "wires": [
+            [
+                "91d667237768e8f5",
+                "9671807a2396dd37"
+            ]
+        ]
+    }
+]
